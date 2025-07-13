@@ -1,0 +1,79 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #0056b3;
+    text-align: center;
+}
+
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 10px;
+    color: #0056b3;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.item label {
+    flex-grow: 1;
+    margin-left: 8px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #1877f2;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #166fe5;
+}
+
+#keranjang {
+    background-color: #e7f3ff;
+    border: 1px solid #bde0fe;
+    padding: 20px;
+    border
