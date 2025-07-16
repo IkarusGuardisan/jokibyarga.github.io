@@ -1,86 +1,81 @@
 body {
-    font-family: 'Share Tech Mono', monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Font futuristik */
+    font-family: 'Share Tech Mono', monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    background-color: #0f0f1d; /* Latar belakang sangat gelap */
-    color: #e0e0e0; /* Warna teks terang */
+    background-color: #0f0f1d;
+    color: #e0e0e0;
     margin: 0;
     padding: 20px;
-    /* Ubah background-image body agar terlihat lebih menyatu dengan animasi */
-    background-image: 
-        linear-gradient(to right, rgba(15, 15, 29, 0.8) 1px, transparent 1px), /* Garis vertikal tipis */
-        linear-gradient(to bottom, rgba(15, 15, 29, 0.8) 1px, transparent 1px); /* Garis horizontal tipis */
-    background-size: 20px 20px; /* Ukuran grid */
-    position: relative; /* Penting untuk penempatan z-index konten */
+    /* Background grid awal yang lebih halus */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect fill="%230f0f1d" width="100%25" height="100%25"/><line x1="0" y1="0" x2="100%25" y2="100%25" stroke="%2305050a" stroke-width="0.5"/><line x1="100%25" y1="0" x2="0" y2="100%25" stroke="%2305050a" stroke-width="0.5"/></svg>');
+    background-size: 20px 20px;
+    position: relative; /* Tetap relatif untuk z-index */
 }
 
-/* Pastikan konten utama berada di atas animasi background */
-body > *:not(.cyber-animation) {
+/* Hapus aturan untuk .cyber-animation karena elemennya tidak ada lagi */
+/* body > *:not(.cyber-animation) {
     position: relative; 
-    z-index: 1; /* Pastikan konten seperti h1, p, form berada di atas animasi */
-}
+    z-index: 1;
+} */
+
 
 h1 {
-    color: #00ffcc; /* Neon hijau */
+    color: #00ffcc;
     text-align: center;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; /* Efek glow */
-    letter-spacing: 2px; /* Spasi antar huruf */
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    letter-spacing: 2px;
     margin-bottom: 30px;
-    /* Efek Glitch pada Judul (opsional) */
-    /* uncomment the animation line below if you want the glitch effect */
-    /* animation: glitch 10s infinite linear alternate; */ 
-    /* animation-delay: 2s; */ 
+    /* Animasi glitch pada h1 dihapus */
+    /* animation: none; */ 
+    /* animation-delay: 0s; */
 }
 
-/* Efek "data stream" pada paragraf kecil di bawah judul */
+/* Paragraf kembali ke style dasar tanpa efek typing */
 p {
-    color: #a0a0a0; /* Warna sedikit lebih redup */
+    color: #a0a0a0; 
     text-align: center;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.9em;
-    margin-top: -15px; /* Sedikit naik agar dekat judul */
+    margin-top: -15px;
     letter-spacing: 1px;
-    /* Efek typing dan kursor berkedip */
-    animation: typing 4s steps(40, end) infinite alternate, blink-caret .75s step-end infinite;
-    overflow: hidden; /* Pastikan teks tidak meluap selama animasi */
-    white-space: nowrap; /* Teks tetap dalam satu baris */
-    border-right: .15em solid #00ffcc; /* Efek kursor ketik */
-    width: fit-content; /* Sesuaikan lebar dengan konten */
-    margin-left: auto; /* Pusatkan */
-    margin-right: auto; /* Pusatkan */
+    /* Animasi typing dan kursor berkedip dihapus */
+    animation: none;
+    overflow: visible;
+    white-space: normal;
+    border-right: none;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 form {
     max-width: 800px;
     margin: 20px auto;
-    background-color: #1a1a2e; /* Latar belakang formulir gelap */
+    background-color: #1a1a2e;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2), 0 0 40px rgba(255, 51, 204, 0.1); /* Bayangan neon ganda */
-    border: 1px solid #00ffcc; /* Border neon */
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2), 0 0 40px rgba(255, 51, 204, 0.1);
+    border: 1px solid #00ffcc;
 }
 
-/* Fieldset tanpa efek fokus interaktif */
 fieldset {
-    border: 1px solid #005544; /* Border fieldset lebih gelap */
+    border: 1px solid #005544;
     border-radius: 8px;
     margin-bottom: 25px;
     padding: 20px;
-    background-color: #121220; /* Latar belakang fieldset lebih gelap */
-    /* Transisi untuk efek focus-within dihapus */
+    background-color: #121220;
+    /* Transisi untuk focus-within dihapus */
+    transition: none;
 }
 
-/* Aturan focus-within dihapus agar tidak ada efek glow */
-/* fieldset:focus-within {
-    border-color: #ff33cc;
-    box-shadow: 0 0 15px rgba(255, 51, 204, 0.4), 0 0 30px rgba(0, 255, 204, 0.1);
-} */
+/* Aturan focus-within dihapus */
+/* fieldset:focus-within {} */
 
 legend {
     font-weight: bold;
     font-size: 1.3em;
     padding: 0 10px;
-    color: #ff33cc; /* Neon pink */
-    text-shadow: 0 0 8px #ff33cc; /* Efek glow */
+    color: #ff33cc;
+    text-shadow: 0 0 8px #ff33cc;
 }
 
 .item {
@@ -90,76 +85,70 @@ legend {
     flex-wrap: wrap;
 }
 
+/* Label item kembali ke style dasar tanpa efek hover khusus */
 .item label {
     flex-grow: 1;
     margin-left: 10px;
-    color: #b3b3e6; /* Warna teks label sedikit berbeda */
-    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transisi untuk efek hover */
-    cursor: pointer; /* Menunjukkan ini interaktif */
+    color: #b3b3e6;
+    transition: none; /* Hapus transisi hover */
+    cursor: default; /* Kembali ke kursor default */
 }
 
 .item label:hover {
-    color: #00ffcc; /* Ubah warna teks saat hover */
-    text-shadow: 0 0 5px #00ffcc, 0 0 10px rgba(0, 255, 204, 0.5); /* Tambahkan glow */
+    color: #b3b3e6; /* Kembalikan warna asli saat hover */
+    text-shadow: none; /* Hapus glow saat hover */
 }
 
 input[type="text"],
 input[type="tel"],
 input[type="number"] {
     padding: 10px;
-    border: 1px solid #00ffcc; /* Border neon hijau */
+    border: 1px solid #00ffcc;
     border-radius: 5px;
-    background-color: #0f0f1d; /* Latar belakang input gelap */
-    color: #00ffcc; /* Warna teks input neon */
-    box-shadow: 0 0 5px rgba(0, 255, 204, 0.3); /* Bayangan kecil */
-    transition: all 0.3s ease; /* Transisi halus */
+    background-color: #0f0f1d;
+    color: #00ffcc;
+    box-shadow: 0 0 5px rgba(0, 255, 204, 0.3);
+    transition: all 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus {
     outline: none;
-    border-color: #ff33cc; /* Border neon pink saat fokus */
-    box-shadow: 0 0 8px rgba(255, 51, 204, 0.5), 0 0 15px rgba(255, 51, 204, 0.3); /* Glow lebih kuat saat fokus */
+    border-color: #ff33cc;
+    box-shadow: 0 0 8px rgba(255, 51, 204, 0.5), 0 0 15px rgba(255, 51, 204, 0.3);
 }
 
-/* Efek untuk checkbox kustom */
+/* Checkbox kembali ke tampilan default browser */
 input[type="checkbox"] {
-    appearance: none; /* Sembunyikan checkbox default */
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #ff33cc; /* Border neon pink */
-    border-radius: 3px;
-    background-color: #1a1a2e; /* Latar belakang gelap */
+    appearance: checkbox; /* Kembalikan tampilan checkbox default */
+    -webkit-appearance: checkbox;
+    width: auto; /* Ukuran default browser */
+    height: auto; /* Ukuran default browser */
+    border: initial; /* Hapus border kustom */
+    border-radius: initial; /* Hapus border-radius kustom */
+    background-color: initial; /* Hapus background kustom */
     cursor: pointer;
-    position: relative;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 0 5px rgba(255, 51, 204, 0.3);
+    position: static; /* Hapus posisi relatif */
+    transition: none; /* Hapus transisi */
+    box-shadow: none; /* Hapus box-shadow */
 }
 
 input[type="checkbox"]:checked {
-    background-color: #00ffcc; /* Warna centang neon hijau */
-    border-color: #00ffcc;
-    box-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
+    background-color: initial; 
+    border-color: initial;
+    box-shadow: initial;
 }
 
 input[type="checkbox"]:checked::after {
-    content: '\2713'; /* Tanda centang unicode */
-    font-size: 14px;
-    color: #0f0f1d; /* Warna teks gelap untuk tanda centang */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: bold;
+    content: none; /* Hapus tanda centang kustom */
 }
 
 input[type="checkbox"]:hover {
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6), 0 0 15px rgba(255, 51, 204, 0.3);
+    box-shadow: none; /* Hapus box-shadow saat hover */
 }
 
-/* Tombol submit tanpa efek hover/glow berlebihan, kembali ke basic cyberpunk */
+
 button {
     background-color: #1a1a2e; /* Warna latar belakang tombol gelap */
     color: #00ffcc; /* Teks neon hijau */
@@ -185,134 +174,43 @@ button:hover {
 }
 
 #keranjang {
-    background-color: #1a1a2e; /* Sama dengan form */
-    border: 1px solid #00ffcc; /* Border neon */
+    background-color: #1a1a2e;
+    border: 1px solid #00ffcc;
     padding: 25px;
     border-radius: 10px;
     color: #e0e0e0;
     box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
-    margin-top: 20px; /* Tambahkan margin atas */
+    margin-top: 20px;
 }
 
-/* Animasi cahaya pada keranjang saat ada item */
-#keranjang.active-glow {
-    animation: pulseGlow 1.5s infinite alternate;
-}
+/* Animasi cahaya pada keranjang saat ada item dihapus */
+/* #keranjang.active-glow {
+    animation: none;
+} */
 
-/* Styling untuk list item di keranjang */
+/* Styling untuk list item di keranjang kembali ke dasar */
 #daftar-pesanan li {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Kembali ke font default body */
     color: #e0e0e0;
     margin-bottom: 5px;
-    list-style: none; /* Hapus bullet point default */
-    position: relative;
-    padding-left: 15px;
+    list-style: disc; /* Kembali ke bullet point default */
+    position: static;
+    padding-left: 0;
 }
 
 #daftar-pesanan li:before {
-    content: '\2022'; /* Bullet point kustom */
-    color: #00ffcc; /* Warna neon */
-    font-size: 1.2em;
-    position: absolute;
-    left: 0;
-    top: -2px;
+    content: none; /* Hapus bullet point kustom */
 }
 
 #daftar-pesanan li:hover {
-    color: #ff33cc;
-    text-shadow: 0 0 5px #ff33cc;
+    color: #e0e0e0; /* Kembalikan warna asli saat hover */
+    text-shadow: none; /* Hapus text-shadow saat hover */
 }
 
-/* --- Cyberpunk Background Animation --- */
-.cyber-animation {
-    position: fixed;
-    top: 0;
-    width: 15vw; /* Lebar animasi, sesuaikan sesuai keinginan */
-    height: 100%;
-    z-index: -1; /* Pastikan di belakang konten */
-    overflow: hidden; /* Sembunyikan bagian yang keluar dari area div */
-    pointer-events: none; /* Agar tidak mengganggu interaksi mouse */
-}
-
-.cyber-left {
-    left: 0;
-    /* Membuat garis-garis vertikal */
-    background: linear-gradient(to bottom, 
-                rgba(0, 255, 204, 0.1) 0%, /* Neon hijau transparan */
-                transparent 10%, 
-                transparent 90%, 
-                rgba(0, 255, 204, 0.1) 100%);
-    background-size: 100% 50px; /* Ukuran satu blok gradien (tinggi 50px) */
-    animation: cyberPulseLeft 10s linear infinite; /* Animasi berulang */
-}
-
-.cyber-right {
-    right: 0;
-    /* Membuat garis-garis vertikal, sedikit berbeda warna/animasi */
-    background: linear-gradient(to bottom, 
-                rgba(255, 51, 204, 0.1) 0%, /* Neon pink transparan */
-                transparent 10%, 
-                transparent 90%, 
-                rgba(255, 51, 204, 0.1) 100%);
-    background-size: 100% 70px; /* Ukuran satu blok gradien yang sedikit berbeda */
-    animation: cyberPulseRight 12s linear infinite reverse; /* Animasi berulang, arah terbalik */
-}
-
-/* Keyframes untuk animasi pergerakan */
-@keyframes cyberPulseLeft {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 100vh; /* Geser ke bawah sepanjang tinggi viewport */ }
-}
-
-@keyframes cyberPulseRight {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 100vh; /* Geser ke bawah sepanjang tinggi viewport */ }
-}
-
-/* Keyframes for typing effect (untuk tag <p>) */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-/* Keyframes for blinking caret (untuk tag <p>) */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #00ffcc; }
-}
-
-/* Keyframes for Keranjang pulse glow */
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 15px rgba(0, 255, 204, 0.2), 0 0 20px rgba(255, 51, 204, 0.1); }
-    100% { box-shadow: 0 0 25px rgba(0, 255, 204, 0.6), 0 0 35px rgba(255, 51, 204, 0.3); }
-}
-
-/* Optional Glitch Keyframes (uncomment h1 animation to use) */
-/*
-@keyframes glitch {
-    0% {
-        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-        transform: translate(0, 0);
-    }
-    20% {
-        text-shadow: 2px 2px 10px #ff33cc, -2px -2px 10px #00ffcc;
-        transform: translate(-2px, 2px);
-    }
-    40% {
-        text-shadow: -2px 0 10px #00ffcc, 2px 0 10px #ff33cc;
-        transform: translate(2px, -2px);
-    }
-    60% {
-        text-shadow: 0px 4px 10px #ff33cc, 0px -4px 10px #00ffcc;
-        transform: translate(-4px, 4px);
-    }
-    80% {
-        text-shadow: -4px -2px 10px #00ffcc, 4px 2px 10px #ff33cc;
-        transform: translate(4px, -4px);
-    }
-    100% {
-        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-        transform: translate(0, 0);
-    }
-}
-*/
+/* --- Keyframes yang tidak lagi digunakan dihapus --- */
+/* @keyframes cyberPulseLeft {} */
+/* @keyframes cyberPulseRight {} */
+/* @keyframes typing {} */
+/* @keyframes blink-caret {} */
+/* @keyframes pulseGlow {} */
+/* @keyframes glitch {} */
