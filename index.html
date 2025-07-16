@@ -6,8 +6,41 @@
     <title>Joki by Arga Tzy</title>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS untuk Notifikasi Bubble */
+        .notification-bubble {
+            display: none; /* Sembunyikan secara default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ff33cc; /* Warna neon pink untuk notifikasi */
+            color: #0f0f1d; /* Teks gelap */
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 51, 204, 0.7); /* Glow neon */
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1em;
+            text-align: center;
+            z-index: 1000; /* Pastikan di atas semua elemen lain */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border: 1px solid #ff00b3;
+        }
+
+        .notification-bubble.show {
+            opacity: 1;
+            display: block;
+        }
+    </style>
 </head>
 <body>
+    <div class="cyber-animation cyber-left"></div>
+    <div class="cyber-animation cyber-right"></div>
+
+    <div id="dataDiriNotification" class="notification-bubble">
+        Harap isi data diri (Nama, No. WhatsApp, Server) terlebih dahulu!
+    </div>
 
     <h1>Selamat Datang di Website Saya</h1>
     <p>Situs ini sedang dalam tahap pengembangan.</p>
@@ -21,9 +54,9 @@
 
         <fieldset>
             <legend>Data Pelanggan</legend>
-            <p><label>Nama: <input type="text" name="nama" required /></label></p>
-            <p><label>No. WhatsApp: <input type="text" inputmode="numeric" pattern="[0-9]+" name="no_wa" required /></label></p>
-            <p><label>Server: <input type="text" name="server" required /></label></p>
+            <p><label>Nama: <input type="text" name="nama" id="inputNama" required /></label></p>
+            <p><label>No. WhatsApp: <input type="text" inputmode="numeric" pattern="[0-9]+" name="no_wa" id="inputNoWa" required /></label></p>
+            <p><label>Server: <input type="text" name="server" id="inputServer" required /></label></p>
         </fieldset>
 
         <fieldset>
@@ -190,6 +223,29 @@
         const detailPesananHiddenEl = document.getElementById('detail_pesanan_hidden');
         const totalHargaHiddenEl = document.getElementById('total_harga_hidden');
 
+        // Elemen input data pelanggan
+        const inputNama = document.getElementById('inputNama');
+        const inputNoWa = document.getElementById('inputNoWa');
+        const inputServer = document.getElementById('inputServer');
+
+        // Elemen notifikasi bubble
+        const dataDiriNotification = document.getElementById('dataDiriNotification');
+
+        // Fungsi untuk mengecek apakah data diri sudah diisi
+        function isDataDiriFilled() {
+            return inputNama.value.trim() !== '' &&
+                   inputNoWa.value.trim() !== '' &&
+                   inputServer.value.trim() !== '';
+        }
+
+        // Fungsi untuk menampilkan notifikasi bubble
+        function showNotification() {
+            dataDiriNotification.classList.add('show');
+            setTimeout(() => {
+                dataDiriNotification.classList.remove('show');
+            }, 3000); // Notifikasi akan hilang setelah 3 detik
+        }
+
         // Menambahkan event listener ke seluruh form untuk mendeteksi perubahan
         orderForm.addEventListener('change', updateKeranjang);
 
@@ -202,6 +258,17 @@
         document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
             checkbox.addEventListener('change', (event) => {
                 const inputKuantitas = document.querySelector(`input[type="number"][data-for="${event.target.id}"]`);
+                
+                if (!isDataDiriFilled() && event.target.checked) {
+                    event.target.checked = false; // Batalkan centang
+                    if (inputKuantitas) {
+                        inputKuantitas.disabled = true;
+                        inputKuantitas.value = 0;
+                    }
+                    showNotification(); // Tampilkan notifikasi
+                    return; // Hentikan proses selanjutnya
+                }
+
                 if (inputKuantitas) {
                     if (event.target.checked) {
                         inputKuantitas.disabled = false;
@@ -272,6 +339,14 @@
 
         // Panggil updateKeranjang saat halaman pertama kali dimuat untuk inisialisasi
         document.addEventListener('DOMContentLoaded', updateKeranjang);
+
+        // Tambahkan event listener untuk tombol submit
+        orderForm.addEventListener('submit', function(event) {
+            if (!isDataDiriFilled()) {
+                event.preventDefault(); // Mencegah form submit
+                showNotification(); // Tampilkan notifikasi
+            }
+        });
     </script>
 
 </body>
