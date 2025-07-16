@@ -1,40 +1,51 @@
 /* ==================================================================== */
-/* Gaya Umum & Tema Neon (dari file CSS raw kamu)                      */
+/* Gaya Umum & Tema Seven Deadly Sins Grand Cross                     */
 /* ==================================================================== */
+
+/* Import Fonts dari Google Fonts */
+/* Cinzel untuk judul besar, Merriweather untuk sub-judul, Open Sans untuk teks biasa */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Variabel Warna Tema 7DS */
+:root {
+    --color-bg-dark: #1a1a2e; /* Latar belakang gelap utama */
+    --color-bg-light: #2c3e50; /* Latar belakang elemen lebih terang */
+    --color-primary-red: #e74c3c; /* Merah khas SDS */
+    --color-accent-gold: #f1c40f; /* Emas untuk highlight */
+    --color-text-light: #ecf0f1; /* Teks terang */
+    --color-text-dark: #34495e; /* Teks gelap */
+    --color-border-main: #34495e; /* Border utama */
+    --color-border-accent: #f1c40f; /* Border aksen */
+    --color-shadow: rgba(0, 0, 0, 0.4); /* Bayangan umum */
+    --color-whatsapp: #28a745; /* Hijau WhatsApp */
+}
+
 body {
-    font-family: 'Share Tech Mono', monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Font utama untuk teks biasa */
     line-height: 1.6;
-    background-color: #0f0f1d;
-    color: #e0e0e0;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
     margin: 0;
-    padding: 0; /* Hapus padding default body agar background cover penuh */
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     text-align: center;
-    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
-    position: relative; /* Diperlukan untuk z-index jika ada elemen absolut */
-
-    /* Layer 1: Background Seven Deadly Sins (disesuaikan agar cocok dengan tema neon) */
-    background-image: url('https://i.ibb.co/VMyh02S/seven-deadly-sins-background.jpg'); /* Ganti dengan URL gambar pilihanmu */
+    overflow-x: hidden;
+    position: relative;
+    
+    /* Background Gambar Seven Deadly Sins */
+    background-image: url('https://i.ibb.co/L8mN92s/7ds-background-epic.jpg'); /* Ganti dengan URL gambar 7DS epik yang lebih baik jika ada */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    filter: brightness(0.6) contrast(1.2) grayscale(0.5); /* Gelapkan, tingkatkan kontras, sedikit abu-abu */
-    transition: filter 0.5s ease; /* Transisi halus saat filter berubah */
-
-    /* Layer 2: Grid overlay dari CSS aslimu */
-    /* Akan ditambahkan sebagai pseudo-element atau div terpisah jika perlu untuk layer berbeda */
-    /* Untuk sementara, kita pertahankan grid di body jika tidak ada masalah z-index */
-    /* Jika overlay grid tidak muncul, kita akan pindahkan ini ke ::before atau elemen lain */
-    /* background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect fill="%230f0f1d" width="100%25" height="100%25"/><line x1="0" y1="0" x2="100%25" y2="100%25" stroke="%2305050a" stroke-width="0.5"/><line x1="100%25" y1="0" x2="0" y2="100%25" stroke="%2305050a" stroke-width="0.5"/></svg>'), url('URL GAMBAR SDS'); */
-    /* background-size: 20px 20px, cover; */
-    /* background-blend-mode: overlay; /* Coba overlay untuk mencampur grid dengan gambar */
+    background-attachment: fixed; /* Efek Parallax Sederhana */
+    filter: brightness(0.7) contrast(1.1); /* Sedikit gelap dan kontras */
+    transition: filter 0.5s ease;
 }
 
-/* Overlay untuk efek grid yang lebih baik di atas gambar */
+/* Overlay untuk efek tekstur atau filter di atas background */
 body::before {
     content: '';
     position: fixed;
@@ -42,60 +53,59 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect fill="%2300000000" width="100%25" height="100%25"/><line x1="0" y1="0" x2="100%25" y2="100%25" stroke="%2305050a" stroke-width="0.5"/><line x1="100%25" y1="0" x2="0" y2="100%25" stroke="%2305050a" stroke-width="0.5"/></svg>');
-    background-size: 20px 20px;
-    z-index: -1; /* Pastikan di bawah konten, tapi di atas gambar latar belakang */
-    opacity: 0.8; /* Sesuaikan opacity grid */
-    pointer-events: none; /* Agar tidak menghalangi interaksi mouse */
+    background: rgba(0, 0, 0, 0.4); /* Lapisan gelap transparan */
+    /* Opsional: Tambahkan tekstur di sini, contoh: */
+    /* background-image: url('https://www.transparenttextures.com/patterns/dark-denim.png'); */
+    /* background-size: 200px 200px; */
+    z-index: -1;
+    pointer-events: none;
 }
-
 
 h1 {
-    color: #00ffcc;
+    font-family: 'Cinzel', serif; /* Font epik untuk judul utama */
+    color: var(--color-accent-gold);
     text-align: center;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    text-shadow: 0 0 10px var(--color-accent-gold), 0 0 20px rgba(241, 196, 15, 0.5);
     letter-spacing: 2px;
     margin-bottom: 30px;
+    font-size: 3.5em; /* Ukuran font lebih besar */
 }
 
-/* Paragraf umum */
 p {
-    color: #a0a0a0;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-text-light);
     text-align: center;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.9em;
-    margin-top: -15px;
-    letter-spacing: 1px;
-    animation: none;
-    overflow: visible;
-    white-space: normal;
-    border-right: none;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1.1em;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
 
 form {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #1a1a2e;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2), 0 0 40px rgba(255, 51, 204, 0.1);
-    border: 1px solid #00ffcc;
+    max-width: 850px; /* Lebar form sedikit lebih besar */
+    margin: 30px auto;
+    background-color: var(--color-bg-light); /* Latar belakang form */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px var(--color-shadow), 0 0 30px rgba(241, 196, 15, 0.2); /* Bayangan dan sedikit glow emas */
+    border: 2px solid var(--color-border-main); /* Border utama */
+    overflow: hidden; /* Penting untuk beberapa efek visual */
+    position: relative; /* Untuk pseudo-elements jika dibutuhkan */
 }
 
-/* === Fieldset Data Pelanggan yang Dirapikan === */
+/* === Fieldset Data Pelanggan & Kategori === */
 fieldset {
-    border: 1px solid #005544;
+    border: 1px solid var(--color-border-main);
     border-radius: 8px;
-    margin-bottom: 25px;
-    padding: 20px;
-    background-color: #121220;
-    transition: none;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: var(--color-bg-dark); /* Latar belakang fieldset lebih gelap */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Inner shadow untuk kedalaman */
+    transition: all 0.3s ease;
+}
+
+fieldset:hover {
+    border-color: var(--color-accent-gold); /* Border emas saat hover */
+    box-shadow: inset 0 0 15px rgba(241, 196, 15, 0.2), 0 0 15px rgba(241, 196, 15, 0.1);
 }
 
 fieldset p {
@@ -105,173 +115,243 @@ fieldset p {
     justify-content: space-between;
     flex-wrap: wrap;
     text-align: left;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1em;
-    letter-spacing: normal;
+    color: var(--color-text-light);
 }
 
 fieldset p label {
-    flex-basis: 30%;
+    flex-basis: 35%; /* Sesuaikan proporsi label */
     margin-left: 0;
-    color: #b3b3e6;
-    transition: none;
-    cursor: default;
+    color: var(--color-text-light);
+    font-weight: 600;
 }
 
 fieldset input[type="text"],
-fieldset input[type="tel"],
-fieldset input[type="number"] {
-    flex-basis: 65%;
-    max-width: 65%;
-    padding: 10px;
-    border: 1px solid #00ffcc;
-    border-radius: 5px;
+fieldset input[type="number"] { /* Gabungkan input tel ke type=number */
+    flex-basis: 60%;
+    max-width: 60%;
+    padding: 12px;
+    border: 1px solid var(--color-border-main);
+    border-radius: 6px;
     background-color: #0f0f1d;
-    color: #00ffcc;
-    box-shadow: 0 0 5px rgba(0, 255, 204, 0.3);
+    color: var(--color-accent-gold); /* Teks input emas */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
+    font-family: 'Open Sans', sans-serif; /* Font untuk input */
+    font-size: 1em;
 }
 
 input[type="text"]:focus,
-input[type="tel"]:focus,
 input[type="number"]:focus {
     outline: none;
-    border-color: #ff33cc;
-    box-shadow: 0 0 8px rgba(255, 51, 204, 0.5), 0 0 15px rgba(255, 51, 204, 0.3);
+    border-color: var(--color-accent-gold);
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.6), inset 0 0 8px rgba(241, 196, 15, 0.3);
+    background-color: #151525; /* Sedikit lebih gelap saat fokus */
 }
 
 legend {
-    font-weight: bold;
-    font-size: 1.3em;
-    padding: 0 10px;
-    color: #ff33cc;
-    text-shadow: 0 0 8px #ff33cc;
+    font-family: 'Merriweather', serif; /* Font untuk legenda */
+    font-weight: 700;
+    font-size: 1.6em;
+    padding: 0 15px;
+    color: var(--color-primary-red); /* Warna merah khas SDS */
+    text-shadow: 0 0 8px var(--color-primary-red), 0 0 15px rgba(231, 76, 60, 0.5);
+    background-color: var(--color-bg-light); /* Latar belakang legenda */
+    border-radius: 5px;
 }
 
+/* === Item Layanan (Checkbox + Input Number) === */
 .item {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
-    flex-wrap: wrap;
+    justify-content: space-between; /* Menjaga spasi antara label dan input */
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.2); /* Latar belakang sedikit transparan untuk item */
+    border-radius: 6px;
+    border: 1px solid var(--color-border-main);
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    background-color: rgba(241, 196, 15, 0.08); /* Sedikit kilau emas saat hover */
+    border-color: var(--color-accent-gold);
+    transform: translateY(-3px); /* Efek naik sedikit */
+    box-shadow: 0 2px 8px rgba(241, 196, 15, 0.2);
 }
 
 .item label {
     flex-grow: 1;
     margin-left: 10px;
-    color: #b3b3e6;
-    transition: none;
-    cursor: default;
-}
-
-.item label:hover {
-    color: #b3b3e6;
-    text-shadow: none;
+    color: var(--color-text-light);
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
 }
 
 input[type="checkbox"] {
-    appearance: checkbox;
-    -webkit-appearance: checkbox;
-    width: auto;
-    height: auto;
-    border: initial;
-    border-radius: initial;
-    background-color: initial;
+    /* Custom checkbox style */
+    appearance: none;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--color-accent-gold); /* Border emas */
+    border-radius: 4px;
+    background-color: #0f0f1d;
     cursor: pointer;
-    position: static;
-    transition: none;
-    box-shadow: none;
+    position: relative;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0; /* Pastikan checkbox tidak menyusut */
 }
 
 input[type="checkbox"]:checked {
-    background-color: initial;
-    border-color: initial;
-    box-shadow: initial;
+    background-color: var(--color-primary-red); /* Merah saat dicentang */
+    border-color: var(--color-primary-red);
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.7); /* Glow merah */
 }
 
 input[type="checkbox"]:checked::after {
-    content: none;
+    content: '\2713'; /* Tanda centang unicode */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-text-light);
+    font-size: 16px;
+    font-weight: bold;
 }
 
-input[type="checkbox"]:hover {
-    box-shadow: none;
+input[type="checkbox"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #7f8c8d;
+    background-color: #5d6d7e;
 }
 
-button {
-    background-color: #1a1a2e;
-    color: #00ffcc;
-    padding: 14px 28px;
-    border: 1px solid #00ffcc;
-    border-radius: 7px;
+.item input[type="number"] {
+    width: 60px; /* Lebar input number lebih kecil */
+    text-align: center;
+    margin-left: 15px; /* Jarak dari label */
+    padding: 8px;
+    border: 1px solid var(--color-border-main);
+    border-radius: 5px;
+    background-color: #0f0f1d;
+    color: var(--color-accent-gold);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.item input[type="number"]:disabled {
+    background-color: #34495e;
+    color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+/* Catatan PvP */
+p i {
+    display: block; /* Pastikan catatan di baris baru */
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #bdc3c7;
+    text-align: center;
+}
+
+button[type="submit"] {
+    background-color: var(--color-primary-red); /* Tombol utama merah SDS */
+    color: var(--color-text-light);
+    padding: 15px 30px;
+    border: 2px solid var(--color-primary-red);
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: bold;
     display: block;
     width: 100%;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: none;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    letter-spacing: 1.5px;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif; /* Font Cinzel untuk tombol utama */
 }
 
-button:hover {
-    background-color: #00ffcc;
-    color: #0f0f1d;
-    border-color: #00ffcc;
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+button[type="submit"]:hover {
+    background-color: #c0392b; /* Merah lebih gelap saat hover */
+    border-color: #c0392b;
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+    transform: translateY(-2px);
 }
 
+/* === Keranjang Belanja === */
 #keranjang {
-    background-color: #1a1a2e;
-    border: 1px solid #00ffcc;
+    background-color: var(--color-bg-dark);
+    border: 2px solid var(--color-accent-gold); /* Border emas */
     padding: 25px;
     border-radius: 10px;
-    color: #e0e0e0;
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
-    margin-top: 20px;
+    color: var(--color-text-light);
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.3); /* Glow emas */
+    margin-top: 30px;
+    text-align: left; /* Rata kiri untuk detail pesanan */
+}
+
+#keranjang h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8em;
+    color: var(--color-primary-red);
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 0 5px var(--color-primary-red);
+}
+
+#daftar-pesanan {
+    list-style: none; /* Hapus bullet default */
+    padding: 0;
+    margin-bottom: 15px;
 }
 
 #daftar-pesanan li {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #e0e0e0;
-    margin-bottom: 5px;
-    list-style: disc;
-    position: static;
-    padding-left: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+    padding-left: 25px; /* Spasi untuk ikon custom */
+    position: relative;
+    font-size: 1em;
 }
 
 #daftar-pesanan li:before {
-    content: none;
-}
-
-#daftar-pesanan li:hover {
-    color: #e0e0e0;
-    text-shadow: none;
-}
-
-/* Notifikasi Bubble (dari inline style HTML) */
-.notification-bubble {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ff33cc;
-    color: #0f0f1d;
-    padding: 15px 25px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(255, 51, 204, 0.7);
-    font-family: 'Share Tech Mono', monospace;
+    content: '\2728'; /* Ikon bintang atau kilauan unicode */
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-gold);
     font-size: 1.1em;
-    text-align: center;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    border: 1px solid #ff00b3;
 }
 
-.notification-bubble.show {
-    opacity: 1;
+#keranjang hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(241, 196, 15, 0), rgba(241, 196, 15, 0.75), rgba(241, 196, 15, 0)); /* Garis gradient emas */
+    margin: 20px 0;
+}
+
+#total-harga {
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+    color: var(--color-accent-gold);
     display: block;
+    text-align: right; /* Total harga di kanan */
+    margin-top: 15px;
+    text-shadow: 0 0 10px var(--color-accent-gold);
+}
+
+
+/* Notifikasi Bubble */
+.notification-bubble {
+    /* Sudah ada di HTML, pastikan gaya ini sesuai */
+    background-color: var(--color-primary-red); /* Merah SDS */
+    color: var(--color-text-light); /* Teks terang */
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.7); /* Glow merah */
+    border: 1px solid #c0392b; /* Border merah lebih gelap */
+    font-family: 'Open Sans', sans-serif; /* Font umum */
+    font-size: 1em;
 }
 
 /* ==================================================================== */
@@ -280,82 +360,86 @@ button:hover {
 
 /* Container terima kasih (untuk halaman thank-you.html) */
 .container {
-    background-color: rgba(26, 26, 46, 0.9); /* Latar belakang semi-transparan yang mirip dengan form utama */
+    background-color: var(--color-bg-light); /* Latar belakang form */
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 204, 0.3); /* Tambah glow neon */
-    max-width: 600px;
+    box-shadow: 0 10px 30px var(--color-shadow), 0 0 20px rgba(241, 196, 15, 0.3); /* Bayangan dan glow emas */
+    max-width: 650px; /* Lebar lebih proporsional */
     width: 90%;
     animation: fadeIn 1.5s ease-out forwards;
     position: relative;
     z-index: 1;
-    border: 1px solid #00ffcc; /* Border neon */
+    border: 2px solid var(--color-accent-gold); /* Border emas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Judul Terima Kasih (untuk halaman thank-you.html) */
 .container header h1 {
-    font-size: 3em;
-    color: #ffd700; /* Warna emas untuk judul utama terima kasih */
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px rgba(0, 255, 204, 0.7); /* Emas dengan sedikit hijau neon */
+    font-size: 3.2em;
+    color: var(--color-accent-gold);
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px var(--color-accent-gold), 0 0 25px rgba(241, 196, 15, 0.5);
     animation: slideInTop 1s ease-out forwards;
-    font-family: 'Merriweather', serif; /* Gunakan font fantasi untuk judul ini */
+    font-family: 'Cinzel', serif; /* Gunakan font Cinzel untuk judul ini */
 }
 
 .highlight {
-    background: linear-gradient(90deg, #ff4d4d, #ffa500); /* Gradient merah-oranye SDS */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold; /* Pastikan tebal */
+    color: var(--color-primary-red); /* Merah cerah */
+    text-shadow: 0 0 10px var(--color-primary-red), 0 0 20px rgba(231, 76, 60, 0.7);
+    font-weight: bold;
 }
 
 /* Paragraf pesan terima kasih */
 .container main p {
-    font-family: 'Share Tech Mono', monospace; /* Kembali ke font techy untuk pesan */
-    font-size: 1.2em;
-    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.7;
     margin-bottom: 15px;
     opacity: 0;
     animation: fadeInText 1s ease-out forwards;
     animation-delay: 1s;
-    color: #e0e0e0; /* Sesuaikan warna teks */
-    text-align: center; /* Pastikan rata tengah */
+    color: var(--color-text-light);
+    text-align: center;
 }
 
 .whatsapp-message {
-    color: #28a745; /* Warna hijau WhatsApp */
+    color: var(--color-whatsapp);
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.2em;
     animation-delay: 1.5s;
-    text-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Glow hijau lembut */
+    text-shadow: 0 0 8px rgba(40, 167, 69, 0.6);
 }
 
 /* Tombol Kembali ke Halaman Utama */
 .button-wrapper {
-    margin-top: 30px;
+    margin-top: 35px;
     animation: fadeInButton 1s ease-out forwards;
     animation-delay: 2s;
 }
 
 .button-home {
     display: inline-block;
-    background-color: #6a057e; /* Warna ungu gelap dari SDS */
-    color: #fff;
+    background-color: var(--color-primary-red); /* Merah SDS */
+    color: var(--color-text-light);
     padding: 15px 30px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #9d4edd; /* Border ungu lebih terang */
-    box-shadow: 0 0 10px rgba(157, 78, 221, 0.5); /* Glow ungu */
-    font-family: 'Share Tech Mono', monospace; /* Gunakan font techy untuk tombol */
+    border: 2px solid var(--color-accent-gold); /* Border emas */
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.5); /* Glow emas */
+    font-family: 'Merriweather', serif; /* Font Merriweather untuk tombol */
     letter-spacing: 1px;
+    font-size: 1.1em;
 }
 
 .button-home:hover {
-    background-color: #9d4edd; /* Warna ungu lebih terang saat hover */
+    background-color: #c0392b; /* Merah lebih gelap saat hover */
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(157, 78, 221, 0.8), 0 0 25px rgba(0, 255, 204, 0.2); /* Glow ungu dan sedikit neon */
+    box-shadow: 0 0 15px rgba(241, 196, 15, 0.8), 0 0 25px rgba(231, 76, 60, 0.3); /* Glow emas dan sedikit merah */
 }
 
 /* Footer halaman terima kasih */
@@ -366,124 +450,61 @@ button:hover {
     opacity: 0;
     animation: fadeIn 1.5s ease-out forwards;
     animation-delay: 2.5s;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Open Sans', sans-serif;
 }
 
-/* Animasi (dipertahankan dari solusi SDS sebelumnya) */
+/* Animasi */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInText {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInButton {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes slideInTop {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Media Queries untuk Responsif */
-@media (max-width: 768px) {
-    /* Umum */
-    h1 {
-        font-size: 2.5em;
-    }
-
-    form {
-        padding: 20px;
-    }
-
-    /* Untuk halaman terima kasih */
-    .container header h1 {
-        font-size: 2.5em;
-    }
-
-    .container main p {
-        font-size: 1.1em;
-    }
-
-    .container {
-        padding: 30px;
-    }
+@media (max-width: 800px) {
+    h1 { font-size: 3em; }
+    form { padding: 30px; max-width: 90%; }
+    fieldset p label, fieldset input[type="text"], fieldset input[type="number"] { flex-basis: 100%; max-width: 100%; margin-bottom: 10px; }
+    fieldset p { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 600px) {
-    fieldset p {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    h1 { font-size: 2.5em; }
+    form { padding: 20px; }
+    legend { font-size: 1.4em; }
+    .item { flex-direction: column; align-items: flex-start; }
+    .item label { margin-left: 0; margin-bottom: 5px; }
+    .item input[type="number"] { margin-left: 0; width: 80px; } /* Lebar di mobile */
 
-    fieldset p label,
-    fieldset input[type="text"],
-    fieldset input[type="tel"],
-    fieldset input[type="number"] {
-        flex-basis: 100%;
-        max-width: 100%;
-        margin-bottom: 5px;
-    }
+    .container header h1 { font-size: 2.5em; }
+    .container main p { font-size: 1em; }
+    .whatsapp-message { font-size: 1.1em; }
+    .container { padding: 30px; }
+    .button-home { padding: 12px 25px; font-size: 1em; }
 }
 
-@media (max-width: 480px) {
-    /* Umum */
-    h1 {
-        font-size: 2em;
-    }
+@media (max-width: 400px) {
+    h1 { font-size: 2em; }
+    form { padding: 15px; }
+    legend { font-size: 1.2em; }
+    button[type="submit"] { font-size: 1em; padding: 12px 20px; }
+    #keranjang h3 { font-size: 1.5em; }
+    #total-harga { font-size: 1.5em; }
 
-    form {
-        padding: 15px;
-    }
-
-    button {
-        padding: 12px 20px;
-        font-size: 1em;
-    }
-
-    /* Untuk halaman terima kasih */
-    .container header h1 {
-        font-size: 2em;
-    }
-
-    .container main p {
-        font-size: 1em;
-    }
-
-    .container {
-        padding: 20px;
-    }
-
-    .button-home {
-        padding: 12px 25px;
-    }
+    .container header h1 { font-size: 2em; }
+    .container { padding: 20px; }
 }
