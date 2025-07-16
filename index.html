@@ -3,44 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joki by Arga Tzy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>Joki 7DS Grand Cross - Arga Tzy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
-    <style>
-        .notification-bubble {
-            display: none; /* Sembunyikan secara default */
-            position: fixed; /* Tetap di viewport */
-            bottom: 20px; /* Jarak dari bawah layar */
-            left: 50%; /* Tengah horizontal */
-            transform: translateX(-50%); /* Penyesuaian tengah horizontal */
-            background-color: #ff33cc; /* Warna neon pink untuk notifikasi */
-            color: #0f0f1d; /* Teks gelap */
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(255, 51, 204, 0.7); /* Glow neon */
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1.1em;
-            text-align: center;
-            z-index: 1000; /* Pastikan di atas semua elemen lain */
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            border: 1px solid #ff00b3;
-        }
-
-        .notification-bubble.show {
-            opacity: 1;
-            display: block;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <div id="dataDiriNotification" class="notification-bubble">
         Harap isi data diri (Nama, No. WhatsApp, Server) terlebih dahulu!
     </div>
 
-    <h1>Selamat Datang di Website Saya</h1>
-    <p>Situs ini sedang dalam tahap pengembangan.</p>
+    <h1>Jasa Joki <span class="highlight">Seven Deadly Sins Grand Cross</span></h1>
+    <p>Raih kekuatan penuh karakter impianmu dengan layanan joki profesional dan terpercaya kami!</p>
 
     <form name="order-jasa" method="POST" data-netlify="true" id="orderForm" action="/thank-you.html" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="order-jasa" />
@@ -52,7 +26,7 @@
         <fieldset>
             <legend>Data Pelanggan</legend>
             <p><label for="inputNama">Nama:</label> <input type="text" name="nama" id="inputNama" required /></p>
-            <p><label for="inputNoWa">No. WhatsApp:</label> <input type="text" inputmode="numeric" pattern="[0-9]+" name="no_wa" id="inputNoWa" required /></p>
+            <p><label for="inputNoWa">No. WhatsApp:</label> <input type="number" inputmode="numeric" pattern="[0-9]+" name="no_wa" id="inputNoWa" required /></p>
             <p><label for="inputServer">Server:</label> <input type="text" name="server" id="inputServer" required /></p>
         </fieldset>
 
@@ -331,7 +305,6 @@
             detailPesananHiddenEl.value = detailPesananText.trim() === '' ? 'Tidak ada pesanan detail.' : detailPesananText;
             totalHargaHiddenEl.value = totalHarga; // Perbarui nilai input tersembunyi total_harga
             
-            // Mengaktifkan/menonaktifkan glow pada keranjang
             // Baris ini dihapus karena notifikasi bubble tidak lagi memicu glow keranjang
             // if (hasItems) {
             //     document.getElementById('keranjang').classList.add('active-glow');
