@@ -11,7 +11,7 @@ body {
     position: relative; /* Tetap relatif untuk z-index */
 }
 
-/* Hapus aturan untuk .cyber-animation karena elemennya tidak ada lagi */
+/* Aturan untuk .cyber-animation sudah dikomentari/dihapus di HTML, jadi ini tidak akan berpengaruh */
 /* body > *:not(.cyber-animation) {
     position: relative; 
     z-index: 1;
@@ -24,7 +24,7 @@ h1 {
     text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     letter-spacing: 2px;
     margin-bottom: 30px;
-    /* Animasi glitch pada h1 dihapus */
+    /* Animasi glitch pada h1 dihapus atau dikomentari sesuai keinginan sebelumnya */
     /* animation: none; */ 
     /* animation-delay: 0s; */
 }
@@ -33,11 +33,11 @@ h1 {
 p {
     color: #a0a0a0; 
     text-align: center;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Share Tech Mono', monospace; /* Tetap pakai font mono untuk paragraf ini */
     font-size: 0.9em;
     margin-top: -15px;
     letter-spacing: 1px;
-    /* Animasi typing dan kursor berkedip dihapus */
+    /* Animasi typing dan kursor berkedip dihapus atau dikomentari sesuai keinginan sebelumnya */
     animation: none;
     overflow: visible;
     white-space: normal;
@@ -57,14 +57,19 @@ form {
     border: 1px solid #00ffcc;
 }
 
+/* Revisi untuk Fieldset Data Pelanggan */
 fieldset {
     border: 1px solid #005544;
     border-radius: 8px;
     margin-bottom: 25px;
     padding: 20px;
     background-color: #121220;
-    /* Transisi untuk focus-within dihapus */
+    /* Transisi focus-within dihapus */
     transition: none;
+    /* === Tambahan untuk merapikan kolom data pelanggan === */
+    display: flex;
+    flex-direction: column; /* Atur item dalam kolom */
+    gap: 15px; /* Jarak antar baris input */
 }
 
 /* Aturan focus-within dihapus */
@@ -99,9 +104,13 @@ legend {
     text-shadow: none; /* Hapus glow saat hover */
 }
 
-input[type="text"],
-input[type="tel"],
-input[type="number"] {
+/* Revisi untuk input text, tel, number di dalam fieldset DATA PELANGGAN */
+/* Ini akan menargetkan input di dalam fieldset secara spesifik untuk layout yang rapi */
+fieldset input[type="text"],
+fieldset input[type="tel"],
+fieldset input[type="number"] {
+    flex-basis: 65%; /* Beri input lebar dasar */
+    max-width: 65%; /* Batasi lebar agar tidak melebar terlalu jauh */
     padding: 10px;
     border: 1px solid #00ffcc;
     border-radius: 5px;
@@ -111,6 +120,7 @@ input[type="number"] {
     transition: all 0.3s ease;
 }
 
+/* Input secara umum (di luar fieldset data pelanggan) masih memiliki fokus glow */
 input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus {
@@ -183,7 +193,7 @@ button:hover {
     margin-top: 20px;
 }
 
-/* Animasi cahaya pada keranjang saat ada item dihapus */
+/* Animasi cahaya pada keranjang saat ada item dihapus atau dikomentari */
 /* #keranjang.active-glow {
     animation: none;
 } */
@@ -207,7 +217,25 @@ button:hover {
     text-shadow: none; /* Hapus text-shadow saat hover */
 }
 
-/* --- Keyframes yang tidak lagi digunakan dihapus --- */
+/* --- Media Query untuk Responsivitas Kolom Data Pelanggan --- */
+@media (max-width: 600px) {
+    fieldset p {
+        flex-direction: column; /* Ubah ke kolom pada layar kecil */
+        align-items: flex-start; /* Ratakan ke kiri */
+    }
+
+    fieldset p label,
+    fieldset input[type="text"],
+    fieldset input[type="tel"],
+    fieldset input[type="number"] {
+        flex-basis: 100%; /* Ambil seluruh lebar */
+        max-width: 100%;
+        margin-bottom: 5px; /* Beri jarak antar label dan input */
+    }
+}
+
+
+/* --- Keyframes yang tidak lagi digunakan dihapus atau dikomentari --- */
 /* @keyframes cyberPulseLeft {} */
 /* @keyframes cyberPulseRight {} */
 /* @keyframes typing {} */
