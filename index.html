@@ -34,9 +34,6 @@
     </style>
 </head>
 <body>
-    <div class="cyber-animation cyber-left"></div>
-    <div class="cyber-animation cyber-right"></div>
-
     <div id="dataDiriNotification" class="notification-bubble">
         Harap isi data diri (Nama, No. WhatsApp, Server) terlebih dahulu!
     </div>
@@ -334,11 +331,12 @@
             totalHargaHiddenEl.value = totalHarga; // Perbarui nilai input tersembunyi total_harga
             
             // Mengaktifkan/menonaktifkan glow pada keranjang
-            if (hasItems) {
-                document.getElementById('keranjang').classList.add('active-glow');
-            } else {
-                document.getElementById('keranjang').classList.remove('active-glow');
-            }
+            // Baris ini dihapus karena notifikasi bubble tidak lagi memicu glow keranjang
+            // if (hasItems) {
+            //     document.getElementById('keranjang').classList.add('active-glow');
+            // } else {
+            //     document.getElementById('keranjang').classList.remove('active-glow');
+            // }
         }
 
         // Fungsi bantuan untuk format mata uang
