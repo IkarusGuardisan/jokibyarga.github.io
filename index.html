@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joki 7DS Grand Cross - Arga Tzy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     
-    </head>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <div id="dataDiriNotification" class="notification-bubble">
         Harap isi data diri (Nama, No. WhatsApp, Server) terlebih dahulu!
@@ -121,7 +121,7 @@
                 <label for="pvp6">Champion (Rp 15.000/Tier Up)</label>
                 <input type="number" data-for="pvp6" min="0" value="0" disabled>
             </div>
-            <p><i>* Catatan: Tier Up yang dimaksud sebagai contoh Champion 5 naik ke Champion 4</i></p>
+            <p class="note"><i>* Catatan: Tier Up yang dimaksud sebagai contoh Champion 5 naik ke Champion 4</i></p>
         </fieldset>
 
         <fieldset>
@@ -303,14 +303,7 @@
             // Update total harga dan field tersembunyi
             totalHargaEl.textContent = formatRupiah(totalHarga);
             detailPesananHiddenEl.value = detailPesananText.trim() === '' ? 'Tidak ada pesanan detail.' : detailPesananText;
-            totalHargaHiddenEl.value = totalHarga; // Perbarui nilai input tersembunyi total_harga
-            
-            // Baris ini dihapus karena notifikasi bubble tidak lagi memicu glow keranjang
-            // if (hasItems) {
-            //     document.getElementById('keranjang').classList.add('active-glow');
-            // } else {
-            //     document.getElementById('keranjang').classList.remove('active-glow');
-            // }
+            totalHargaHiddenEl.value = totalHarga;
         }
 
         // Fungsi bantuan untuk format mata uang
