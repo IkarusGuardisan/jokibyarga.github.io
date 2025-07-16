@@ -6,8 +6,8 @@
     <title>Joki by Arga Tzy</title>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
     <style>
-        /* CSS untuk Notifikasi Bubble */
         .notification-bubble {
             display: none; /* Sembunyikan secara default */
             position: fixed; /* Tetap di viewport */
@@ -288,6 +288,8 @@
             let detailPesananText = '';
             daftarPesananEl.innerHTML = ''; // Kosongkan daftar
 
+            let hasItems = false; // Flag untuk mengecek apakah ada item yang dipilih
+
             items.forEach(item => {
                 if (item.checked) {
                     const harga = parseInt(item.dataset.price);
@@ -319,6 +321,7 @@
 
                     // Siapkan teks untuk dikirim ke Netlify
                     detailPesananText += `${itemText}\n`;
+                    hasItems = true; // Set flag menjadi true jika ada item
                 }
             });
 
@@ -330,6 +333,13 @@
             totalHargaEl.textContent = formatRupiah(totalHarga);
             detailPesananHiddenEl.value = detailPesananText.trim() === '' ? 'Tidak ada pesanan detail.' : detailPesananText;
             totalHargaHiddenEl.value = totalHarga; // Perbarui nilai input tersembunyi total_harga
+            
+            // Mengaktifkan/menonaktifkan glow pada keranjang
+            if (hasItems) {
+                document.getElementById('keranjang').classList.add('active-glow');
+            } else {
+                document.getElementById('keranjang').classList.remove('active-glow');
+            }
         }
 
         // Fungsi bantuan untuk format mata uang
