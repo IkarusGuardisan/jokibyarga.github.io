@@ -1,15 +1,54 @@
+/* ==================================================================== */
+/* Gaya Umum & Tema Neon (dari file CSS raw kamu)                      */
+/* ==================================================================== */
 body {
     font-family: 'Share Tech Mono', monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     background-color: #0f0f1d;
     color: #e0e0e0;
     margin: 0;
-    padding: 20px;
-    /* Background grid awal yang lebih halus */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect fill="%230f0f1d" width="100%25" height="100%25"/><line x1="0" y1="0" x2="100%25" y2="100%25" stroke="%2305050a" stroke-width="0.5"/><line x1="100%25" y1="0" x2="0" y2="100%25" stroke="%2305050a" stroke-width="0.5"/></svg>');
-    background-size: 20px 20px;
-    position: relative; /* Tetap relatif untuk z-index */
+    padding: 0; /* Hapus padding default body agar background cover penuh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+    position: relative; /* Diperlukan untuk z-index jika ada elemen absolut */
+
+    /* Layer 1: Background Seven Deadly Sins (disesuaikan agar cocok dengan tema neon) */
+    background-image: url('https://i.ibb.co/VMyh02S/seven-deadly-sins-background.jpg'); /* Ganti dengan URL gambar pilihanmu */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: brightness(0.6) contrast(1.2) grayscale(0.5); /* Gelapkan, tingkatkan kontras, sedikit abu-abu */
+    transition: filter 0.5s ease; /* Transisi halus saat filter berubah */
+
+    /* Layer 2: Grid overlay dari CSS aslimu */
+    /* Akan ditambahkan sebagai pseudo-element atau div terpisah jika perlu untuk layer berbeda */
+    /* Untuk sementara, kita pertahankan grid di body jika tidak ada masalah z-index */
+    /* Jika overlay grid tidak muncul, kita akan pindahkan ini ke ::before atau elemen lain */
+    /* background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect fill="%230f0f1d" width="100%25" height="100%25"/><line x1="0" y1="0" x2="100%25" y2="100%25" stroke="%2305050a" stroke-width="0.5"/><line x1="100%25" y1="0" x2="0" y2="100%25" stroke="%2305050a" stroke-width="0.5"/></svg>'), url('URL GAMBAR SDS'); */
+    /* background-size: 20px 20px, cover; */
+    /* background-blend-mode: overlay; /* Coba overlay untuk mencampur grid dengan gambar */
 }
+
+/* Overlay untuk efek grid yang lebih baik di atas gambar */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect fill="%2300000000" width="100%25" height="100%25"/><line x1="0" y1="0" x2="100%25" y2="100%25" stroke="%2305050a" stroke-width="0.5"/><line x1="100%25" y1="0" x2="0" y2="100%25" stroke="%2305050a" stroke-width="0.5"/></svg>');
+    background-size: 20px 20px;
+    z-index: -1; /* Pastikan di bawah konten, tapi di atas gambar latar belakang */
+    opacity: 0.8; /* Sesuaikan opacity grid */
+    pointer-events: none; /* Agar tidak menghalangi interaksi mouse */
+}
+
 
 h1 {
     color: #00ffcc;
@@ -19,15 +58,15 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Paragraf umum kembali ke style dasar */
+/* Paragraf umum */
 p {
-    color: #a0a0a0; 
+    color: #a0a0a0;
     text-align: center;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.9em;
     margin-top: -15px;
     letter-spacing: 1px;
-    animation: none; /* Hapus animasi typing */
+    animation: none;
     overflow: visible;
     white-space: normal;
     border-right: none;
@@ -53,40 +92,37 @@ fieldset {
     margin-bottom: 25px;
     padding: 20px;
     background-color: #121220;
-    transition: none; /* Hapus transisi focus-within */
-    display: flex; /* Aktifkan Flexbox */
-    flex-direction: column; /* Tata item dalam kolom */
-    gap: 15px; /* Jarak antar baris input */
+    transition: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Paragraf di dalam fieldset data pelanggan */
 fieldset p {
-    margin: 0; /* Hapus margin default paragraf */
-    display: flex; /* Jadikan flex container */
-    align-items: center; /* Pusatkan secara vertikal */
-    justify-content: space-between; /* Dorong label ke kiri dan input ke kanan */
-    flex-wrap: wrap; /* Izinkan wrap jika layar kecil */
-    text-align: left; /* Kembalikan perataan teks ke kiri untuk label */
-    font-family: 'Share Tech Mono', monospace; /* Sesuaikan font jika perlu */
-    font-size: 1em; /* Sesuaikan ukuran font */
-    letter-spacing: normal; /* Kembalikan spasi huruf normal */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1em;
+    letter-spacing: normal;
 }
 
-/* Label di dalam fieldset data pelanggan */
 fieldset p label {
-    flex-basis: 30%; /* Beri label lebar dasar */
-    margin-left: 0; /* Hapus margin kiri yang mungkin ada */
-    color: #b3b3e6; /* Warna teks label */
-    transition: none; /* Hapus transisi hover */
-    cursor: default; /* Kembali ke kursor default */
+    flex-basis: 30%;
+    margin-left: 0;
+    color: #b3b3e6;
+    transition: none;
+    cursor: default;
 }
 
-/* Input di dalam fieldset data pelanggan */
 fieldset input[type="text"],
 fieldset input[type="tel"],
 fieldset input[type="number"] {
-    flex-basis: 65%; /* Beri input lebar dasar */
-    max-width: 65%; /* Batasi lebar agar tidak melebar terlalu jauh */
+    flex-basis: 65%;
+    max-width: 65%;
     padding: 10px;
     border: 1px solid #00ffcc;
     border-radius: 5px;
@@ -96,7 +132,6 @@ fieldset input[type="number"] {
     transition: all 0.3s ease;
 }
 
-/* Focus glow tetap ada untuk input */
 input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus {
@@ -120,7 +155,6 @@ legend {
     flex-wrap: wrap;
 }
 
-/* Label item di luar data pelanggan */
 .item label {
     flex-grow: 1;
     margin-left: 10px;
@@ -134,40 +168,39 @@ legend {
     text-shadow: none;
 }
 
-/* Checkbox kembali ke tampilan default browser */
 input[type="checkbox"] {
-    appearance: checkbox; 
+    appearance: checkbox;
     -webkit-appearance: checkbox;
-    width: auto; 
-    height: auto; 
-    border: initial; 
-    border-radius: initial; 
-    background-color: initial; 
+    width: auto;
+    height: auto;
+    border: initial;
+    border-radius: initial;
+    background-color: initial;
     cursor: pointer;
-    position: static; 
-    transition: none; 
-    box-shadow: none; 
+    position: static;
+    transition: none;
+    box-shadow: none;
 }
 
 input[type="checkbox"]:checked {
-    background-color: initial; 
+    background-color: initial;
     border-color: initial;
     box-shadow: initial;
 }
 
 input[type="checkbox"]:checked::after {
-    content: none; 
+    content: none;
 }
 
 input[type="checkbox"]:hover {
-    box-shadow: none; 
+    box-shadow: none;
 }
 
 button {
-    background-color: #1a1a2e; /* Warna latar belakang tombol gelap */
-    color: #00ffcc; /* Teks neon hijau */
+    background-color: #1a1a2e;
+    color: #00ffcc;
     padding: 14px 28px;
-    border: 1px solid #00ffcc; /* Border neon */
+    border: 1px solid #00ffcc;
     border-radius: 7px;
     cursor: pointer;
     font-size: 1.1em;
@@ -176,15 +209,15 @@ button {
     width: 100%;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: none; /* Hapus glow */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transisi lebih sederhana */
+    box-shadow: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #00ffcc; /* Ubah background menjadi neon hijau saat hover */
-    color: #0f0f1d; /* Ubah teks menjadi gelap saat hover */
-    border-color: #00ffcc; /* Pertahankan border color */
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6); /* Sedikit glow saat hover */
+    background-color: #00ffcc;
+    color: #0f0f1d;
+    border-color: #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
 }
 
 #keranjang {
@@ -197,41 +230,260 @@ button:hover {
     margin-top: 20px;
 }
 
-/* Styling untuk list item di keranjang */
 #daftar-pesanan li {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #e0e0e0;
     margin-bottom: 5px;
-    list-style: disc; /* Kembali ke bullet point default */
+    list-style: disc;
     position: static;
     padding-left: 0;
 }
 
 #daftar-pesanan li:before {
-    content: none; 
+    content: none;
 }
 
 #daftar-pesanan li:hover {
-    color: #e0e0e0; 
+    color: #e0e0e0;
     text-shadow: none;
 }
 
-/* --- Media Query untuk Responsivitas Kolom Data Pelanggan --- */
+/* Notifikasi Bubble (dari inline style HTML) */
+.notification-bubble {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff33cc;
+    color: #0f0f1d;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 51, 204, 0.7);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.1em;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border: 1px solid #ff00b3;
+}
+
+.notification-bubble.show {
+    opacity: 1;
+    display: block;
+}
+
+/* ==================================================================== */
+/* Gaya Khusus Halaman Terima Kasih (Seven Deadly Sins - disesuaikan)  */
+/* ==================================================================== */
+
+/* Container terima kasih (untuk halaman thank-you.html) */
+.container {
+    background-color: rgba(26, 26, 46, 0.9); /* Latar belakang semi-transparan yang mirip dengan form utama */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 204, 0.3); /* Tambah glow neon */
+    max-width: 600px;
+    width: 90%;
+    animation: fadeIn 1.5s ease-out forwards;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #00ffcc; /* Border neon */
+}
+
+/* Judul Terima Kasih (untuk halaman thank-you.html) */
+.container header h1 {
+    font-size: 3em;
+    color: #ffd700; /* Warna emas untuk judul utama terima kasih */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px rgba(0, 255, 204, 0.7); /* Emas dengan sedikit hijau neon */
+    animation: slideInTop 1s ease-out forwards;
+    font-family: 'Merriweather', serif; /* Gunakan font fantasi untuk judul ini */
+}
+
+.highlight {
+    background: linear-gradient(90deg, #ff4d4d, #ffa500); /* Gradient merah-oranye SDS */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold; /* Pastikan tebal */
+}
+
+/* Paragraf pesan terima kasih */
+.container main p {
+    font-family: 'Share Tech Mono', monospace; /* Kembali ke font techy untuk pesan */
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeInText 1s ease-out forwards;
+    animation-delay: 1s;
+    color: #e0e0e0; /* Sesuaikan warna teks */
+    text-align: center; /* Pastikan rata tengah */
+}
+
+.whatsapp-message {
+    color: #28a745; /* Warna hijau WhatsApp */
+    font-weight: bold;
+    font-size: 1.3em;
+    animation-delay: 1.5s;
+    text-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Glow hijau lembut */
+}
+
+/* Tombol Kembali ke Halaman Utama */
+.button-wrapper {
+    margin-top: 30px;
+    animation: fadeInButton 1s ease-out forwards;
+    animation-delay: 2s;
+}
+
+.button-home {
+    display: inline-block;
+    background-color: #6a057e; /* Warna ungu gelap dari SDS */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #9d4edd; /* Border ungu lebih terang */
+    box-shadow: 0 0 10px rgba(157, 78, 221, 0.5); /* Glow ungu */
+    font-family: 'Share Tech Mono', monospace; /* Gunakan font techy untuk tombol */
+    letter-spacing: 1px;
+}
+
+.button-home:hover {
+    background-color: #9d4edd; /* Warna ungu lebih terang saat hover */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.8), 0 0 25px rgba(0, 255, 204, 0.2); /* Glow ungu dan sedikit neon */
+}
+
+/* Footer halaman terima kasih */
+.container footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #b0b0b0;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 2.5s;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/* Animasi (dipertahankan dari solusi SDS sebelumnya) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 768px) {
+    /* Umum */
+    h1 {
+        font-size: 2.5em;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    /* Untuk halaman terima kasih */
+    .container header h1 {
+        font-size: 2.5em;
+    }
+
+    .container main p {
+        font-size: 1.1em;
+    }
+
+    .container {
+        padding: 30px;
+    }
+}
+
 @media (max-width: 600px) {
     fieldset p {
-        flex-direction: column; /* Ubah ke kolom pada layar kecil */
-        align-items: flex-start; /* Ratakan ke kiri */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     fieldset p label,
     fieldset input[type="text"],
     fieldset input[type="tel"],
     fieldset input[type="number"] {
-        flex-basis: 100%; /* Ambil seluruh lebar */
+        flex-basis: 100%;
         max-width: 100%;
-        margin-bottom: 5px; /* Beri jarak antar label dan input */
+        margin-bottom: 5px;
     }
 }
 
-/* --- Keyframes yang tidak lagi digunakan dihapus --- */
-/* Semua @keyframes yang terkait dengan animasi yang dihapus sudah tidak ada di sini */
+@media (max-width: 480px) {
+    /* Umum */
+    h1 {
+        font-size: 2em;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    /* Untuk halaman terima kasih */
+    .container header h1 {
+        font-size: 2em;
+    }
+
+    .container main p {
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .button-home {
+        padding: 12px 25px;
+    }
+}
