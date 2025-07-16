@@ -11,34 +11,23 @@ body {
     position: relative; /* Tetap relatif untuk z-index */
 }
 
-/* Aturan untuk .cyber-animation sudah dikomentari/dihapus di HTML, jadi ini tidak akan berpengaruh */
-/* body > *:not(.cyber-animation) {
-    position: relative; 
-    z-index: 1;
-} */
-
-
 h1 {
     color: #00ffcc;
     text-align: center;
     text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     letter-spacing: 2px;
     margin-bottom: 30px;
-    /* Animasi glitch pada h1 dihapus atau dikomentari sesuai keinginan sebelumnya */
-    /* animation: none; */ 
-    /* animation-delay: 0s; */
 }
 
-/* Paragraf kembali ke style dasar tanpa efek typing */
+/* Paragraf umum kembali ke style dasar */
 p {
     color: #a0a0a0; 
     text-align: center;
-    font-family: 'Share Tech Mono', monospace; /* Tetap pakai font mono untuk paragraf ini */
+    font-family: 'Share Tech Mono', monospace;
     font-size: 0.9em;
     margin-top: -15px;
     letter-spacing: 1px;
-    /* Animasi typing dan kursor berkedip dihapus atau dikomentari sesuai keinginan sebelumnya */
-    animation: none;
+    animation: none; /* Hapus animasi typing */
     overflow: visible;
     white-space: normal;
     border-right: none;
@@ -57,23 +46,64 @@ form {
     border: 1px solid #00ffcc;
 }
 
-/* Revisi untuk Fieldset Data Pelanggan */
+/* === Fieldset Data Pelanggan yang Dirapikan === */
 fieldset {
     border: 1px solid #005544;
     border-radius: 8px;
     margin-bottom: 25px;
     padding: 20px;
     background-color: #121220;
-    /* Transisi focus-within dihapus */
-    transition: none;
-    /* === Tambahan untuk merapikan kolom data pelanggan === */
-    display: flex;
-    flex-direction: column; /* Atur item dalam kolom */
+    transition: none; /* Hapus transisi focus-within */
+    display: flex; /* Aktifkan Flexbox */
+    flex-direction: column; /* Tata item dalam kolom */
     gap: 15px; /* Jarak antar baris input */
 }
 
-/* Aturan focus-within dihapus */
-/* fieldset:focus-within {} */
+/* Paragraf di dalam fieldset data pelanggan */
+fieldset p {
+    margin: 0; /* Hapus margin default paragraf */
+    display: flex; /* Jadikan flex container */
+    align-items: center; /* Pusatkan secara vertikal */
+    justify-content: space-between; /* Dorong label ke kiri dan input ke kanan */
+    flex-wrap: wrap; /* Izinkan wrap jika layar kecil */
+    text-align: left; /* Kembalikan perataan teks ke kiri untuk label */
+    font-family: 'Share Tech Mono', monospace; /* Sesuaikan font jika perlu */
+    font-size: 1em; /* Sesuaikan ukuran font */
+    letter-spacing: normal; /* Kembalikan spasi huruf normal */
+}
+
+/* Label di dalam fieldset data pelanggan */
+fieldset p label {
+    flex-basis: 30%; /* Beri label lebar dasar */
+    margin-left: 0; /* Hapus margin kiri yang mungkin ada */
+    color: #b3b3e6; /* Warna teks label */
+    transition: none; /* Hapus transisi hover */
+    cursor: default; /* Kembali ke kursor default */
+}
+
+/* Input di dalam fieldset data pelanggan */
+fieldset input[type="text"],
+fieldset input[type="tel"],
+fieldset input[type="number"] {
+    flex-basis: 65%; /* Beri input lebar dasar */
+    max-width: 65%; /* Batasi lebar agar tidak melebar terlalu jauh */
+    padding: 10px;
+    border: 1px solid #00ffcc;
+    border-radius: 5px;
+    background-color: #0f0f1d;
+    color: #00ffcc;
+    box-shadow: 0 0 5px rgba(0, 255, 204, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Focus glow tetap ada untuk input */
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #ff33cc;
+    box-shadow: 0 0 8px rgba(255, 51, 204, 0.5), 0 0 15px rgba(255, 51, 204, 0.3);
+}
 
 legend {
     font-weight: bold;
@@ -90,58 +120,33 @@ legend {
     flex-wrap: wrap;
 }
 
-/* Label item kembali ke style dasar tanpa efek hover khusus */
+/* Label item di luar data pelanggan */
 .item label {
     flex-grow: 1;
     margin-left: 10px;
     color: #b3b3e6;
-    transition: none; /* Hapus transisi hover */
-    cursor: default; /* Kembali ke kursor default */
+    transition: none;
+    cursor: default;
 }
 
 .item label:hover {
-    color: #b3b3e6; /* Kembalikan warna asli saat hover */
-    text-shadow: none; /* Hapus glow saat hover */
-}
-
-/* Revisi untuk input text, tel, number di dalam fieldset DATA PELANGGAN */
-/* Ini akan menargetkan input di dalam fieldset secara spesifik untuk layout yang rapi */
-fieldset input[type="text"],
-fieldset input[type="tel"],
-fieldset input[type="number"] {
-    flex-basis: 65%; /* Beri input lebar dasar */
-    max-width: 65%; /* Batasi lebar agar tidak melebar terlalu jauh */
-    padding: 10px;
-    border: 1px solid #00ffcc;
-    border-radius: 5px;
-    background-color: #0f0f1d;
-    color: #00ffcc;
-    box-shadow: 0 0 5px rgba(0, 255, 204, 0.3);
-    transition: all 0.3s ease;
-}
-
-/* Input secara umum (di luar fieldset data pelanggan) masih memiliki fokus glow */
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="number"]:focus {
-    outline: none;
-    border-color: #ff33cc;
-    box-shadow: 0 0 8px rgba(255, 51, 204, 0.5), 0 0 15px rgba(255, 51, 204, 0.3);
+    color: #b3b3e6;
+    text-shadow: none;
 }
 
 /* Checkbox kembali ke tampilan default browser */
 input[type="checkbox"] {
-    appearance: checkbox; /* Kembalikan tampilan checkbox default */
+    appearance: checkbox; 
     -webkit-appearance: checkbox;
-    width: auto; /* Ukuran default browser */
-    height: auto; /* Ukuran default browser */
-    border: initial; /* Hapus border kustom */
-    border-radius: initial; /* Hapus border-radius kustom */
-    background-color: initial; /* Hapus background kustom */
+    width: auto; 
+    height: auto; 
+    border: initial; 
+    border-radius: initial; 
+    background-color: initial; 
     cursor: pointer;
-    position: static; /* Hapus posisi relatif */
-    transition: none; /* Hapus transisi */
-    box-shadow: none; /* Hapus box-shadow */
+    position: static; 
+    transition: none; 
+    box-shadow: none; 
 }
 
 input[type="checkbox"]:checked {
@@ -151,13 +156,12 @@ input[type="checkbox"]:checked {
 }
 
 input[type="checkbox"]:checked::after {
-    content: none; /* Hapus tanda centang kustom */
+    content: none; 
 }
 
 input[type="checkbox"]:hover {
-    box-shadow: none; /* Hapus box-shadow saat hover */
+    box-shadow: none; 
 }
-
 
 button {
     background-color: #1a1a2e; /* Warna latar belakang tombol gelap */
@@ -193,14 +197,9 @@ button:hover {
     margin-top: 20px;
 }
 
-/* Animasi cahaya pada keranjang saat ada item dihapus atau dikomentari */
-/* #keranjang.active-glow {
-    animation: none;
-} */
-
-/* Styling untuk list item di keranjang kembali ke dasar */
+/* Styling untuk list item di keranjang */
 #daftar-pesanan li {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Kembali ke font default body */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #e0e0e0;
     margin-bottom: 5px;
     list-style: disc; /* Kembali ke bullet point default */
@@ -209,12 +208,12 @@ button:hover {
 }
 
 #daftar-pesanan li:before {
-    content: none; /* Hapus bullet point kustom */
+    content: none; 
 }
 
 #daftar-pesanan li:hover {
-    color: #e0e0e0; /* Kembalikan warna asli saat hover */
-    text-shadow: none; /* Hapus text-shadow saat hover */
+    color: #e0e0e0; 
+    text-shadow: none;
 }
 
 /* --- Media Query untuk Responsivitas Kolom Data Pelanggan --- */
@@ -234,11 +233,5 @@ button:hover {
     }
 }
 
-
-/* --- Keyframes yang tidak lagi digunakan dihapus atau dikomentari --- */
-/* @keyframes cyberPulseLeft {} */
-/* @keyframes cyberPulseRight {} */
-/* @keyframes typing {} */
-/* @keyframes blink-caret {} */
-/* @keyframes pulseGlow {} */
-/* @keyframes glitch {} */
+/* --- Keyframes yang tidak lagi digunakan dihapus --- */
+/* Semua @keyframes yang terkait dengan animasi yang dihapus sudah tidak ada di sini */
