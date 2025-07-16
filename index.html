@@ -10,10 +10,10 @@
         /* CSS untuk Notifikasi Bubble */
         .notification-bubble {
             display: none; /* Sembunyikan secara default */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: fixed; /* Tetap di viewport */
+            bottom: 20px; /* Jarak dari bawah layar */
+            left: 50%; /* Tengah horizontal */
+            transform: translateX(-50%); /* Penyesuaian tengah horizontal */
             background-color: #ff33cc; /* Warna neon pink untuk notifikasi */
             color: #0f0f1d; /* Teks gelap */
             padding: 15px 25px;
