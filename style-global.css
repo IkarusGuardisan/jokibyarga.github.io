@@ -58,3 +58,103 @@ footer {
     color: #b0b0b0;
     font-family: 'Open Sans', sans-serif;
 }
+/* ==================================================================== */
+/* Gaya Footer Profesional                                            */
+/* ==================================================================== */
+
+.site-footer {
+    width: 100%;
+    background-color: #0e0e10;
+    color: #a9a9a9;
+    padding: 50px 20px 20px 20px;
+    margin-top: auto;
+    border-top: 2px solid var(--color-border-main);
+    box-sizing: border-box;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-column h3, .footer-column h4 {
+    color: var(--color-text-light);
+    font-family: 'Merriweather', serif;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.footer-column.about h3 {
+    font-size: 1.5em;
+    font-family: 'Cinzel', serif;
+    color: var(--color-accent-gold);
+}
+
+.footer-column p {
+    font-size: 0.9em;
+    line-height: 1.7;
+    text-align: left;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul a {
+    color: #a9a9a9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul a:hover {
+    color: var(--color-accent-gold);
+}
+
+.social-icons a {
+    color: #a9a9a9;
+    font-size: 2em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--color-primary-red);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border-main);
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.disclaimer {
+    font-size: 0.8em;
+    color: #95a5a6;
+    max-width: 800px;
+    margin: 15px auto 0 auto;
+    padding: 0 20px;
+}
