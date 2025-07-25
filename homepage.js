@@ -96,14 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
             imageUrl: 'banergrid.png',
             link: '#',
             status: 'coming-soon',
-            isPopular: false
+            isPopular: true
         },
         {
             title: 'Top Up Games',
             imageUrl: 'banergrid.png',
             link: '#',
             status: 'coming-soon',
-            isPopular: false
+            isPopular: true
         }
     ];
 
