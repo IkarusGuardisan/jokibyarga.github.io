@@ -51,17 +51,6 @@ body::before {
     opacity: 1;
 }
 
-footer {
-    margin-top: 40px;
-    padding-bottom: 20px;
-    font-size: 0.9em;
-    color: #b0b0b0;
-    font-family: 'Open Sans', sans-serif;
-}
-/* ==================================================================== */
-/* Gaya Footer Profesional                                            */
-/* ==================================================================== */
-
 .site-footer {
     width: 100%;
     background-color: #0e0e10;
