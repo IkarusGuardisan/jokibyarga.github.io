@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             isPopular: false
         },
         {
-            title: 'Akun Premium',
+            title: 'Akun Streaming',
             imageUrl: 'banergrid.png',
             link: '#',
             status: 'coming-soon',
