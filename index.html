@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joki 7DS Grand Cross - Arga Tzy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -33,37 +32,37 @@
         <fieldset>
             <legend>Kategori 1: Story</legend>
             <div class="item">
-                <input type="checkbox" id="story1" data-name="Story Utama (7DS) Chapter 1-12" data-price="8000">
+                <input type="checkbox" id="story1">
                 <label for="story1">Story Utama (7DS) Chapter 1-12 (Rp 8.000/Chapter)</label>
-                <input type="number" data-for="story1" min="0" value="0" disabled>
+                <input type="number" data-for="story1" min="0" max="12" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="story2" data-name="Story Utama (7DS) Chapter 13-30" data-price="7000">
+                <input type="checkbox" id="story2">
                 <label for="story2">Story Utama (7DS) Chapter 13-30 (Rp 7.000/Chapter)</label>
-                <input type="number" data-for="story2" min="0" value="0" disabled>
+                <input type="number" data-for="story2" min="0" max="17" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="story3" data-name="Story Utama (4KOA) Prolog-End" data-price="7000">
+                <input type="checkbox" id="story3">
                 <label for="story3">Story Utama (4KOA) Prolog-End (Rp 7.000/Chapter)</label>
                 <input type="number" data-for="story3" min="0" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="story4" data-name="Story Tambahan (Village) Chapter 1-6" data-price="8000">
+                <input type="checkbox" id="story4">
                 <label for="story4">Story Tambahan (Village) Chapter 1-6 (Rp 8.000/Chapter)</label>
-                <input type="number" data-for="story4" min="0" value="0" disabled>
+                <input type="number" data-for="story4" min="0" max="6" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="story5" data-name="Story Tambahan (Ragnarok) Chapter 1-4" data-price="8000">
+                <input type="checkbox" id="story5">
                 <label for="story5">Story Tambahan (Ragnarok) Chapter 1-4 (Rp 8.000/Chapter)</label>
-                <input type="number" data-for="story5" min="0" value="0" disabled>
+                <input type="number" data-for="story5" min="0" max="4" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="story6" data-name="Story Tambahan (Ragnarok) Chapter 5-8" data-price="7000">
+                <input type="checkbox" id="story6">
                 <label for="story6">Story Tambahan (Ragnarok) Chapter 5-8 (Rp 7.000/Chapter)</label>
-                <input type="number" data-for="story6" min="0" value="0" disabled>
+                <input type="number" data-for="story6" min="0" max="4" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="story7" data-name="Story Tambahan (Sacrifice & Film) Chapter 1-End" data-price="7000">
+                <input type="checkbox" id="story7">
                 <label for="story7">Story Tambahan (Sacrifice & Film) Chapter 1-End (Rp 7.000/Chapter)</label>
                 <input type="number" data-for="story7" min="0" value="0" disabled>
             </div>
@@ -72,19 +71,20 @@
         <fieldset>
             <legend>Kategori 2: Season</legend>
             <div class="item">
-                <input type="checkbox" id="season1" data-name="Hero Arena" data-price="10000">
+                <input type="checkbox" id="season1">
                 <label for="season1">Hero Arena (Rp 10.000/Minggu)</label>
+                <input type="number" data-for="season1" min="0" max="4" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="season2" data-name="Labyrinth" data-price="40000">
+                <input type="checkbox" id="season2">
                 <label for="season2">Labyrinth (Rp 40.000/All Shop)</label>
             </div>
             <div class="item">
-                <input type="checkbox" id="season3" data-name="Liones Defensive War" data-price="30000">
+                <input type="checkbox" id="season3">
                 <label for="season3">Liones Defensive War (Rp 30.000/All Shop)</label>
             </div>
             <div class="item">
-                <input type="checkbox" id="season4" data-name="Final Boss" data-price="45000">
+                <input type="checkbox" id="season4">
                 <label for="season4">Final Boss (Rp 45.000/End Season)</label>
             </div>
         </fieldset>
@@ -92,32 +92,32 @@
         <fieldset>
             <legend>Kategori 3: PvP</legend>
             <div class="item">
-                <input type="checkbox" id="pvp1" data-name="PvP Bronze" data-price="1000">
+                <input type="checkbox" id="pvp1">
                 <label for="pvp1">Bronze (Rp 1.000/Tier Up)</label>
                 <input type="number" data-for="pvp1" min="0" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="pvp2" data-name="PvP Silver" data-price="2000">
+                <input type="checkbox" id="pvp2">
                 <label for="pvp2">Silver (Rp 2.000/Tier Up)</label>
                 <input type="number" data-for="pvp2" min="0" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="pvp3" data-name="PvP Gold" data-price="3000">
+                <input type="checkbox" id="pvp3">
                 <label for="pvp3">Gold (Rp 3.000/Tier Up)</label>
                 <input type="number" data-for="pvp3" min="0" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="pvp4" data-name="PvP Platinum" data-price="4000">
+                <input type="checkbox" id="pvp4">
                 <label for="pvp4">Platinum (Rp 4.000/Tier Up)</label>
                 <input type="number" data-for="pvp4" min="0" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="pvp5" data-name="PvP Master" data-price="8000">
+                <input type="checkbox" id="pvp5">
                 <label for="pvp5">Master (Rp 8.000/Tier Up)</label>
                 <input type="number" data-for="pvp5" min="0" value="0" disabled>
             </div>
             <div class="item">
-                <input type="checkbox" id="pvp6" data-name="PvP Champion" data-price="15000">
+                <input type="checkbox" id="pvp6">
                 <label for="pvp6">Champion (Rp 15.000/Tier Up)</label>
                 <input type="number" data-for="pvp6" min="0" value="0" disabled>
             </div>
@@ -127,23 +127,23 @@
         <fieldset>
             <legend>Kategori 4: Rawat Akun</legend>
             <div class="item">
-                <input type="checkbox" id="rawat1" data-name="Rawat Monthly Reguler" data-price="100000">
+                <input type="checkbox" id="rawat1">
                 <label for="rawat1">Monthly Reguler (Rp 100.000/Bulan)</label>
             </div>
             <div class="item">
-                <input type="checkbox" id="rawat2" data-name="Rawat Monthly VIP" data-price="300000">
+                <input type="checkbox" id="rawat2">
                 <label for="rawat2">Monthly VIP (Rp 300.000/Bulan)</label>
             </div>
             <div class="item">
-                <input type="checkbox" id="rawat3" data-name="Rawat Weekly Reguler" data-price="42000">
+                <input type="checkbox" id="rawat3">
                 <label for="rawat3">Weekly Reguler (Rp 42.000/Minggu)</label>
             </div>
             <div class="item">
-                <input type="checkbox" id="rawat4" data-name="Rawat Weekly VIP" data-price="100000">
+                <input type="checkbox" id="rawat4">
                 <label for="rawat4">Weekly VIP (Rp 100.000/Minggu)</label>
             </div>
             <div class="item">
-                <input type="checkbox" id="rawat5" data-name="Rawat Daily Reguler" data-price="5000">
+                <input type="checkbox" id="rawat5">
                 <label for="rawat5">Daily Reguler (Rp 5.000/Hari)</label>
             </div>
         </fieldset>
@@ -151,19 +151,19 @@
         <fieldset>
             <legend>Kategori 5: Farming</legend>
             <div class="item">
-                <input type="checkbox" id="farm1" data-name="Farm Gold (Garansi 100m)" data-price="40000">
+                <input type="checkbox" id="farm1">
                 <label for="farm1">Farm Gold (Rp 40.000/24 Jam)</label>
             </div>
             <div class="item">
-                <input type="checkbox" id="farm2" data-name="Farm Exp Pot" data-price="35000">
+                <input type="checkbox" id="farm2">
                 <label for="farm2">Farm Exp Pot (Rp 35.000/24 Jam)</label>
             </div>
             <div class="item">
-                <input type="checkbox" id="farm3" data-name="Farm Buku" data-price="35000">
+                <input type="checkbox" id="farm3">
                 <label for="farm3">Farm Buku (Rp 35.000/24 Jam)</label>
             </div>
             <div class="item">
-                <input type="checkbox" id="farm4" data-name="Farm SA Coin" data-price="6000">
+                <input type="checkbox" id="farm4">
                 <label for="farm4">Farm SA Coin (Rp 6.000/Key)</label>
                 <input type="number" data-for="farm4" min="0" value="0" disabled>
             </div>
@@ -183,145 +183,8 @@
 
         <p><button type="submit">Kirim Pesanan</button></p>
     </form>
-
-    <script>
-        // Mendapatkan elemen formulir utama
-        const orderForm = document.getElementById('orderForm');
-        // Mendapatkan elemen-elemen untuk tampilan keranjang dan total harga
-        const daftarPesananEl = document.getElementById('daftar-pesanan');
-        const totalHargaEl = document.getElementById('total-harga');
-        // Mendapatkan elemen input tersembunyi untuk detail pesanan dan total harga
-        const detailPesananHiddenEl = document.getElementById('detail_pesanan_hidden');
-        const totalHargaHiddenEl = document.getElementById('total_harga_hidden');
-
-        // Elemen input data pelanggan
-        const inputNama = document.getElementById('inputNama');
-        const inputNoWa = document.getElementById('inputNoWa');
-        const inputServer = document.getElementById('inputServer');
-
-        // Elemen notifikasi bubble
-        const dataDiriNotification = document.getElementById('dataDiriNotification');
-
-        // Fungsi untuk mengecek apakah data diri sudah diisi
-        function isDataDiriFilled() {
-            return inputNama.value.trim() !== '' &&
-                   inputNoWa.value.trim() !== '' &&
-                   inputServer.value.trim() !== '';
-        }
-
-        // Fungsi untuk menampilkan notifikasi bubble
-        function showNotification() {
-            dataDiriNotification.classList.add('show');
-            setTimeout(() => {
-                dataDiriNotification.classList.remove('show');
-            }, 3000); // Notifikasi akan hilang setelah 3 detik
-        }
-
-        // Menambahkan event listener ke seluruh form untuk mendeteksi perubahan
-        orderForm.addEventListener('change', updateKeranjang);
-
-        // Menambahkan event listener untuk semua input number agar keranjang diperbarui saat nilainya berubah
-        document.querySelectorAll('input[type="number"]').forEach(inputNum => {
-            inputNum.addEventListener('input', updateKeranjang);
-        });
-
-        // Menambahkan event listener untuk checkbox agar mengaktifkan/menonaktifkan input number
-        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', (event) => {
-                const inputKuantitas = document.querySelector(`input[type="number"][data-for="${event.target.id}"]`);
-                
-                if (!isDataDiriFilled() && event.target.checked) {
-                    event.target.checked = false; // Batalkan centang
-                    if (inputKuantitas) {
-                        inputKuantitas.disabled = true;
-                        inputKuantitas.value = 0;
-                    }
-                    showNotification(); // Tampilkan notifikasi
-                    return; // Hentikan proses selanjutnya
-                }
-
-                if (inputKuantitas) {
-                    if (event.target.checked) {
-                        inputKuantitas.disabled = false;
-                        inputKuantitas.value = 1; // Atur ke 1 saat dicentang
-                    } else {
-                        inputKuantitas.disabled = true;
-                        inputKuantitas.value = 0; // Atur ke 0 saat tidak dicentang
-                    }
-                }
-                updateKeranjang(); // Perbarui keranjang setelah mengaktifkan/menonaktifkan input
-            });
-        });
-
-        function updateKeranjang() {
-            const items = document.querySelectorAll('#orderForm input[type="checkbox"]');
-            let totalHarga = 0;
-            let detailPesananText = '';
-            daftarPesananEl.innerHTML = ''; // Kosongkan daftar
-
-            let hasItems = false; // Flag untuk mengecek apakah ada item yang dipilih
-
-            items.forEach(item => {
-                if (item.checked) {
-                    const harga = parseInt(item.dataset.price);
-                    const nama = item.dataset.name;
-                    let kuantitas = 1;
-                    
-                    // Cek apakah ada input jumlah untuk item ini
-                    const inputKuantitas = document.querySelector(`input[type="number"][data-for="${item.id}"]`);
-                    if (inputKuantitas) {
-                        kuantitas = parseInt(inputKuantitas.value) || 0; // Pastikan kuantitas adalah angka, default 0 jika kosong
-                        if (kuantitas <= 0) {
-                            // Jika kuantitas 0, jangan tampilkan item ini atau tambahkan ke total
-                            return; 
-                        }
-                    }
-
-                    const subtotal = harga * kuantitas;
-                    totalHarga += subtotal;
-
-                    // Tampilkan di keranjang visual
-                    const li = document.createElement('li');
-                    let itemText = `${nama}`;
-                    if(inputKuantitas && kuantitas > 1) { // Tampilkan kuantitas hanya jika ada dan lebih dari 1
-                        itemText += ` x ${kuantitas}`;
-                    }
-                    itemText += ` = ${formatRupiah(subtotal)}`;
-                    li.textContent = itemText;
-                    daftarPesananEl.appendChild(li);
-
-                    // Siapkan teks untuk dikirim ke Netlify
-                    detailPesananText += `${itemText}\n`;
-                    hasItems = true; // Set flag menjadi true jika ada item
-                }
-            });
-
-            if (daftarPesananEl.children.length === 0) {
-                daftarPesananEl.innerHTML = '<li>Belum ada item yang dipilih.</li>';
-            }
-
-            // Update total harga dan field tersembunyi
-            totalHargaEl.textContent = formatRupiah(totalHarga);
-            detailPesananHiddenEl.value = detailPesananText.trim() === '' ? 'Tidak ada pesanan detail.' : detailPesananText;
-            totalHargaHiddenEl.value = totalHarga;
-        }
-
-        // Fungsi bantuan untuk format mata uang
-        function formatRupiah(angka) {
-            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
-        }
-
-        // Panggil updateKeranjang saat halaman pertama kali dimuat untuk inisialisasi
-        document.addEventListener('DOMContentLoaded', updateKeranjang);
-
-        // Tambahkan event listener untuk tombol submit
-        orderForm.addEventListener('submit', function(event) {
-            if (!isDataDiriFilled()) {
-                event.preventDefault(); // Mencegah form submit
-                showNotification(); // Tampilkan notifikasi
-            }
-        });
-    </script>
+    
+    <script src="script.js" defer></script>
 
 </body>
 </html>
