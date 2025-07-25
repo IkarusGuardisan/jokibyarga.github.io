@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
             isPopular: true
         },
         {
-            title: 'Mobile Legends',
-            imageUrl: 'https://via.placeholder.com/300x400/2c3e50/ecf0f1?text=MLBB',
+            title: 'Umamusume:Pretty Derby',
+            imageUrl: 'https://via.placeholder.com/300x400/2c3e50/ecf0f1?text=UPD',
             link: '#',
             status: 'coming-soon',
             isPopular: true
