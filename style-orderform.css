@@ -1,0 +1,624 @@
+.page-orderform {
+    background-image: url('https://i.ibb.co/L8mN92s/7ds-background-epic.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.button-back-to-home {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: var(--color-bg-light);
+    color: var(--color-accent-gold);
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid var(--color-accent-gold);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.button-back-to-home:hover {
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-dark);
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--color-accent-gold);
+    text-align: center;
+    text-shadow: 0 0 10px var(--color-accent-gold), 0 0 20px rgba(241, 196, 15, 0.5);
+    letter-spacing: 2px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 3.5em;
+    padding: 0 15px;
+    max-width: 900px;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-text-light);
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: -10px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+form {
+    max-width: 850px;
+    width: 90%;
+    margin: 20px auto 50px auto;
+    background-color: var(--color-bg-light);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px var(--color-shadow), 0 0 30px rgba(241, 196, 15, 0.2);
+    border: 2px solid var(--color-border-main);
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border: 1px solid var(--color-border-main);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: var(--color-bg-dark);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+fieldset:hover {
+    border-color: var(--color-accent-gold);
+    box-shadow: inset 0 0 15px rgba(241, 196, 15, 0.2), 0 0 15px rgba(241, 196, 15, 0.1);
+}
+
+fieldset p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: var(--color-text-light);
+    padding: 0;
+    max-width: none;
+}
+
+fieldset p label {
+    flex-basis: 35%;
+    margin-left: 0;
+    color: var(--color-text-light);
+    font-weight: 600;
+}
+
+fieldset input[type="text"],
+fieldset input[type="number"] {
+    flex-basis: 60%;
+    max-width: 60%;
+    padding: 12px;
+    border: 1px solid var(--color-border-main);
+    border-radius: 6px;
+    background-color: #0f0f1d;
+    color: var(--color-accent-gold);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--color-accent-gold);
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.6), inset 0 0 8px rgba(241, 196, 15, 0.3);
+    background-color: #151525;
+}
+
+legend {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 1.6em;
+    padding: 0 15px;
+    color: var(--color-primary-red);
+    text-shadow: 0 0 8px var(--color-primary-red), 0 0 15px rgba(231, 76, 60, 0.5);
+    background-color: var(--color-bg-light);
+    border-radius: 5px;
+    margin-left: -15px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border: 1px solid var(--color-border-main);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.item:hover {
+    background-color: rgba(241, 196, 15, 0.08);
+    border-color: var(--color-accent-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 2px 8px rgba(241, 196, 15, 0.2);
+}
+
+.item label {
+    flex-grow: 1;
+    margin-left: 10px;
+    color: var(--color-text-light);
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    text-align: left;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--color-accent-gold);
+    border-radius: 4px;
+    background-color: #0f0f1d;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--color-primary-red);
+    border-color: var(--color-primary-red);
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.7);
+}
+
+input[type="checkbox"]:checked::after {
+    content: '\2713';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-text-light);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.item input[type="number"] {
+    width: 60px;
+    text-align: center;
+    margin-left: 15px;
+    padding: 8px;
+    border: 1px solid var(--color-border-main);
+    border-radius: 5px;
+    background-color: #0f0f1d;
+    color: var(--color-accent-gold);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.item input[type="number"]:disabled {
+    background-color: #34495e;
+    color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+p.note {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 0;
+    max-width: none;
+}
+
+button[type="submit"] {
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    padding: 15px 30px;
+    border: 2px solid var(--color-primary-red);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+    box-sizing: border-box;
+}
+
+button[type="submit"]:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+    transform: translateY(-2px);
+}
+
+#keranjang {
+    background-color: var(--color-bg-dark);
+    border: 2px solid var(--color-accent-gold);
+    padding: 25px;
+    border-radius: 10px;
+    color: var(--color-text-light);
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.3);
+    margin-top: 30px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+#keranjang h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8em;
+    color: var(--color-primary-red);
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 0 5px var(--color-primary-red);
+}
+
+#daftar-pesanan {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+#daftar-pesanan li {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1em;
+}
+
+#daftar-pesanan li:before {
+    content: '\2728';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-gold);
+    font-size: 1.1em;
+}
+
+#keranjang hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(241, 196, 15, 0), rgba(241, 196, 15, 0.75), rgba(241, 196, 15, 0));
+    margin: 20px 0;
+}
+
+#total-harga {
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+    color: var(--color-accent-gold);
+    display: block;
+    text-align: right;
+    margin-top: 15px;
+    text-shadow: 0 0 10px var(--color-accent-gold);
+}
+
+.notification-bubble {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.7);
+    border: 1px solid #c0392b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.notification-bubble.show {
+    opacity: 1;
+    display: block;
+}
+
+.container {
+    background-color: var(--color-bg-light);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--color-shadow), 0 0 20px rgba(241, 196, 15, 0.3);
+    max-width: 650px;
+    width: 90%;
+    animation: fadeIn 1.5s ease-out forwards;
+    position: relative;
+    z-index: 1;
+    border: 2px solid var(--color-accent-gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.container header h1 {
+    font-size: 3.2em;
+    color: var(--color-accent-gold);
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px var(--color-accent-gold), 0 0 25px rgba(241, 196, 15, 0.5);
+    animation: slideInTop 1s ease-out forwards;
+    font-family: 'Cinzel', serif;
+    margin-top: 0;
+}
+
+.highlight {
+    color: var(--color-primary-red);
+    text-shadow: 0 0 10px var(--color-primary-red), 0 0 20px rgba(231, 76, 60, 0.7);
+    font-weight: bold;
+}
+
+.container main p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeInText 1s ease-out forwards;
+    animation-delay: 1s;
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 0;
+    max-width: none;
+}
+
+.whatsapp-message {
+    color: var(--color-whatsapp);
+    font-weight: bold;
+    font-size: 1.2em;
+    animation-delay: 1.5s;
+    text-shadow: 0 0 8px rgba(40, 167, 69, 0.6);
+}
+
+.button-wrapper {
+    margin-top: 35px;
+    animation: fadeInButton 1s ease-out forwards;
+    animation-delay: 2s;
+}
+
+.button-home {
+    display: inline-block;
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--color-accent-gold);
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+    font-family: 'Merriweather', serif;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+}
+
+.button-home:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(241, 196, 15, 0.8), 0 0 25px rgba(231, 76, 60, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInButton {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideInTop {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 850px) {
+    h1 {
+        font-size: 3em;
+        margin-top: 40px;
+    }
+    p {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    form {
+        width: 95%;
+        padding: 30px;
+    }
+    legend {
+        font-size: 1.5em;
+    }
+    fieldset p label,
+    fieldset input[type="text"],
+    fieldset input[type="number"] {
+        flex-basis: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    fieldset p {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .item {
+        padding: 12px 15px;
+    }
+    .item label {
+        margin-left: 0;
+        margin-bottom: 8px;
+    }
+    .item input[type="number"] {
+        margin-left: 0;
+        width: 100px;
+        text-align: left;
+    }
+    button[type="submit"] {
+        font-size: 1.1em;
+    }
+    .container {
+        padding: 30px;
+    }
+    .container header h1 {
+        font-size: 2.8em;
+    }
+    .container main p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2em;
+        margin-top: 30px;
+        letter-spacing: 1px;
+    }
+    p {
+        font-size: 0.9em;
+        margin-bottom: 25px;
+    }
+    form {
+        width: 98%;
+        padding: 15px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    legend {
+        font-size: 1.3em;
+        padding: 0 10px;
+    }
+    fieldset {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    fieldset p label {
+        font-size: 0.9em;
+    }
+    fieldset input[type="text"],
+    fieldset input[type="number"] {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 10px;
+    }
+    .item label {
+        font-size: 0.9em;
+        margin-bottom: 5px;
+    }
+    .item input[type="number"] {
+        width: 80px;
+        padding: 6px;
+        font-size: 0.9em;
+        text-align: center;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+    #keranjang {
+        padding: 15px;
+    }
+    #keranjang h3 {
+        font-size: 1.6em;
+    }
+    #daftar-pesanan li {
+        font-size: 0.9em;
+        padding-left: 20px;
+    }
+    #daftar-pesanan li:before {
+        font-size: 1em;
+    }
+    #total-harga {
+        font-size: 1.8em;
+    }
+    .notification-bubble {
+        padding: 10px 15px;
+        font-size: 0.9em;
+        width: 80%;
+        white-space: normal;
+    }
+    .container {
+        padding: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .container header h1 {
+        font-size: 2.2em;
+    }
+    .container main p {
+        font-size: 0.9em;
+    }
+    .whatsapp-message {
+        font-size: 1em;
+    }
+    .button-home {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    form {
+        padding: 10px;
+    }
+    legend {
+        font-size: 1.1em;
+    }
+    button[type="submit"] {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+    #keranjang h3 {
+        font-size: 1.4em;
+    }
+    #total-harga {
+        font-size: 1.6em;
+    }
+    .notification-bubble {
+        font-size: 0.8em;
+        padding: 8px 12px;
+    }
+    .container header h1 {
+        font-size: 1.8em;
+    }
+    .container main p {
+        font-size: 0.8em;
+    }
+    .whatsapp-message {
+        font-size: 0.9em;
+    }
+}
