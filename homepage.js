@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: 'Umamusume:Pretty Derby',
             imageUrl: 'https://via.placeholder.com/300x400/2c3e50/ecf0f1?text=UPD',
+            logoUrl: 'umamusumelogo.png'
             link: '#',
             status: 'coming-soon',
             isPopular: true
