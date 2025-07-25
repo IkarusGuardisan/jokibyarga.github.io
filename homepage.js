@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameCatalog = [
         {
             title: '7DS: Grand Cross',
-            imageUrl: 'banergrid.png',
+            imageUrl: '7dsgc-image.png',
             link: '7dsgc.html',
             status: 'active',
             isPopular: true
