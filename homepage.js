@@ -148,3 +148,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderCatalogs();
 });
+/* Penambahan Navigasi */
+.main-nav {
+    background-color: var(--color-bg-light);
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid var(--color-border-main);
+    border-bottom: 1px solid var(--color-border-main);
+    margin-bottom: 20px;
+}
+.main-nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.main-nav a:hover {
+    color: var(--color-accent-gold);
+}
+
+/* Penyesuaian untuk layar kecil (HP) */
+@media (max-width: 768px) {
+    .main-header h1, .hero-content h2 {
+        font-size: 2.2em;
+    }
+    .main-header p, .hero-content p {
+        font-size: 1em;
+    }
+    .content-section h2 {
+        font-size: 1.5em;
+    }
+    #popular-container .game-card {
+        width: 240px;
+    }
+    .main-nav a {
+        margin: 0 10px;
+    }
+}
