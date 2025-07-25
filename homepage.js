@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: '7DS: Grand Cross',
             imageUrl: 'https://i.ibb.co/L8mN92s/7ds-background-epic.jpg',
+            logoUrl: '7dsgc-logo.png',
             link: '7dsgc.html',
             status: 'active',
             isPopular: true
