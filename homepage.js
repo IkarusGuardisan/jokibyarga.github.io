@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             isPopular: true
         },
         {
-            title: 'Uma Musume: Pretty Derby',
+            title: 'Umamusume: Pretty Derby',
             imageUrl: 'banergrid.png',
             link: '#',
             status: 'coming-soon',
@@ -19,17 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
             imageUrl: 'banergrid.png',
             link: '#',
             status: 'coming-soon',
-            isPopular: true
+            isPopular: false
         },
         {
-            title: 'Valorant',
+            title: 'Honor of Kings',
             imageUrl: 'banergrid.png',
             link: '#',
             status: 'coming-soon',
             isPopular: true
         },
         {
-            title: 'Dota 2',
+            title: 'Blox Fruits',
             imageUrl: 'banergrid.png',
             link: '#',
             status: 'coming-soon',
@@ -85,21 +85,21 @@ document.addEventListener('DOMContentLoaded', () => {
             isPopular: false
         },
         {
-            title: 'Point Blank: Strike',
+            title: 'Akun Premium',
+            imageUrl: 'banergrid.png',
+            link: '#',
+            status: 'coming-soon',
+            isPopular: true
+        },
+        {
+            title: 'Top Up E-Wallet',
             imageUrl: 'banergrid.png',
             link: '#',
             status: 'coming-soon',
             isPopular: false
         },
         {
-            title: 'Arena of Valor',
-            imageUrl: 'banergrid.png',
-            link: '#',
-            status: 'coming-soon',
-            isPopular: false
-        },
-        {
-            title: 'Call of Duty Mobile',
+            title: 'Top Up Games',
             imageUrl: 'banergrid.png',
             link: '#',
             status: 'coming-soon',
