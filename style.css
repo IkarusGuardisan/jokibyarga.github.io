@@ -789,22 +789,29 @@ button[type="submit"]:hover {
     padding-left: 15px;
 }
 
-/* Grid Kartu Game */
-.game-grid {
+/* TAMBAHKAN KODE BARU INI SEBAGAI PENGGANTINYA */
+
+/* ----- Pengaturan Grid Katalog ----- */
+
+/* Untuk "Produk & Layanan" (Grid Kotak) */
+#product-grid {
     display: grid;
     gap: 20px;
-}
-
-.game-grid#product-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
-.popular-grid {
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(280px, 1fr);
-    overflow-x: auto;
-    padding-bottom: 15px;
-    justify-content: flex-start;
+/* Untuk "Populer" (Baris Horizontal) */
+#popular-container {
+    display: flex; /* Menggunakan Flexbox agar menjadi baris */
+    overflow-x: auto; /* Mengaktifkan scroll horizontal jika item melebihi layar */
+    gap: 20px; /* Jarak antar kartu */
+    padding-bottom: 20px; /* Memberi ruang untuk scrollbar agar tidak menutupi kartu */
+}
+
+/* Pengaturan spesifik untuk kartu di dalam container Populer */
+#popular-container .game-card {
+    flex-shrink: 0; /* Mencegah kartu menjadi 'gepeng' atau mengecil */
+    width: 280px; /* Memberi lebar yang pasti untuk setiap kartu di baris populer */
 }
 
 /* Desain Kartu Game */
