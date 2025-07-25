@@ -147,3 +147,10 @@ body::before {
     margin: 15px auto 0 auto;
     padding: 0 20px;
 }
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
