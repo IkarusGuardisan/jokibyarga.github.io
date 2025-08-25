@@ -4,20 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Absensi Sekolah</title>
-  <link rel="stylesheet" href="style-global.css">
+  <link rel="stylesheet" href="../style-global.css">
 </head>
 <body>
   <h2>Form Absensi Siswa</h2>
-  
-  <form id="absensiForm">
-    <label for="nama">Nama Siswa:</label><br>
-    <input type="text" id="nama" name="nama" required><br><br>
 
-    <label for="kelas">Kelas:</label><br>
-    <input type="text" id="kelas" name="kelas" required><br><br>
+  <form name="absensi" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="absensi">
 
-    <label for="status">Status Kehadiran:</label><br>
-    <select id="status" name="status" required>
+    <label>Nama Siswa:</label><br>
+    <input type="text" name="nama" required><br><br>
+
+    <label>Kelas:</label><br>
+    <input type="text" name="kelas" required><br><br>
+
+    <label>Status Kehadiran:</label><br>
+    <select name="status" required>
       <option value="Hadir">Hadir</option>
       <option value="Izin">Izin</option>
       <option value="Sakit">Sakit</option>
@@ -27,15 +29,6 @@
     <button type="submit">Kirim</button>
   </form>
 
-  <p id="msg"></p>
-
-  <script>
-    const form = document.getElementById("absensiForm");
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      document.getElementById("msg").innerText = "Absensi terkirim (dummy).";
-      form.reset();
-    });
-  </script>
+  <p>Setelah submit, data akan muncul di dashboard Netlify → Forms.</p>
 </body>
 </html>
